@@ -1,11 +1,11 @@
 \chapter{Metodologia}\label{metodologia}
 
-Para comparar o desempenho do APACHE e do NGINX, foram realizados testes usando a ferramenta ApacheBench.\\
+Para comparar o desempenho do APACHE e do Nginx, foram realizados testes usando a ferramenta ApacheBench.\\
 
 O ApacheBench é uma ferramenta para ser utilizada em linha de comando. Para invocar a ferramenta escreve-se o comando “ab” no terminal. A ferramenta aceita como parâmetros, entre outros, a quantidade de requisições que serão feitas e quantas requisições serão feitas de forma simultânea, além URL da \'{a}gina que ser\'{a} requisitada. O comando de uma forma genérica fica assim:\\
 \begin{verbatim}
 ab -n numero_de_requisições -c requisições_simultâneas endereço_do_servidor
-\end{verbatim}\\
+\end{verbatim}
 Como visto, o parâmetro “-n” indica a quantidade total de requisições serão feitas no teste e o parâmetro “-c” indica a quantidade de requisições serão feitas de forma simultânea.\\
 
 Para comparar os desempenhos dos dois servidores HTTP, foram realizados teste com quantidade de requisições entre 1.000 (mil) e 15.000 (quinze mil) pulando de mil em mil e com somente uma requisição concorrente e com 10\%, 20\%, 40\% e 80\% de concorrência de acordo com a quantidade de requisições. Esses números foram estimados tendo em vista a quantidade atual de usuário do SIGA e a quantidade de usuário que poderá ter no futuro.\\
