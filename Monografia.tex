@@ -1,0 +1,232 @@
+\documentclass[
+	% -- opções da classe memoir --
+	12pt,				% tamanho da fonte
+	%openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
+	oneside,			% para impressão em verso e anverso. Oposto a oneside
+	a4paper,			% tamanho do papel. 
+	% -- opções da classe abntex2 --
+	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
+	% -- opções do pacote babel --
+	english,			% idioma adicional para hifenização
+	brazil				% o último idioma é o principal do documento
+]{abntex2}
+
+% ---
+% Pacotes básicos 
+% ---
+\usepackage{lmodern}				% Usa a fonte Latin Modern			
+\usepackage[T1]{fontenc}			% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{lastpage}			% Usado pela Ficha catalográfica
+\usepackage{indentfirst}			% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}				% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{microtype}			% para melhorias de justificação
+\usepackage{multirow}			% mesclar linhas em tabelas
+\usepackage{comment}				% habilita comentário em bloco
+
+% ---
+% Pacotes de citações
+% ---
+\usepackage[brazilian,hyperpageref]{backref}		% Paginas com as citações na bibl
+\usepackage[alf]{abntex2cite}					% Citações padrão ABNT
+
+% --- 
+% CONFIGURAÇÕES DE PACOTES
+% --- 
+% Configurações do pacote backref
+% Usado sem a opção hyperpageref de backref
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+% Texto padrão antes do número das páginas
+\renewcommand{\backref}{}
+% Define os textos da citação
+\renewcommand*{\backrefalt}[4]{
+	\ifcase #1 %
+		Nenhuma citação no texto.%
+	\or
+		Citado na página #2.%
+	\else
+		Citado #1 vezes nas páginas #2.%
+	\fi}%
+
+% ---
+% Informações de dados para CAPA e FOLHA DE ROSTO
+% ---
+\titulo{Proposta de melhoria de desempenho do SIGA utilizando NGINX como servidor HTTP}
+\autor{Lucas Rafael Araujo Andrade}
+\local{Diamantina}
+\data{Dezembro de 2014}
+\orientador{Alexandre Ramos Fonseca}
+\instituicao{%
+  Universidade Federal dos Vales do Jequitinhonha e Mucuri - UFVJM
+  \par
+  Faculdade de Ciências Exatas e Tecnológicas - FACET
+  \par
+  Departamento de Computação - DECOM
+  \par
+  Bacharelado em Sistemas de Informação}
+\tipotrabalho{Trabalho de Conclusão de Curso de Gradua}
+% O preambulo deve conter o tipo do trabalho, o objetivo, 
+% o nome da instituição e a área de concentração 
+\preambulo{Trabalho de conclusão de curso apresentado à banca examinadora
+ Designada pelo Colegiado do Curso de Sistemas de Informação como parte
+ dos requisitos da disciplina de Projeto Orientado II para
+ obtenção do grau de Bacharel em Sistemas de Informação.}
+% ---
+
+
+% ---
+% Configurações de aparência do PDF final
+
+% informações do PDF
+\makeatletter
+\hypersetup{
+     	%pagebackref=true,
+		pdftitle={\@title}, 
+		pdfauthor={\@author},
+    		pdfsubject={\imprimirpreambulo},
+	    pdfcreator={LaTeX with abnTeX2},
+		pdfkeywords={NGINX}{APACHE2}{SIGA}{UFVJM}{Monografia}, 
+		colorlinks=false,       		% false: boxed links; true: colored links
+    		%linkcolor=blue,          	% color of internal links
+    		%citecolor=blue,        		% color of links to bibliography
+    		filecolor=magenta,      		% color of file links
+		%urlcolor=blue,
+		bookmarksdepth=4,
+		pdfborder = {0 0 0}
+}
+\makeatother
+
+% --- 
+% Espaçamentos entre linhas e parágrafos 
+% --- 
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.3cm}
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+% ---
+% compila o indice
+% ---
+\makeindex
+
+% ----
+% Início do documento
+% ----
+\begin{document}
+
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 
+
+% ----------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ----------------------------------------------------------
+\pretextual
+
+% ---
+% Capa
+% ---
+\imprimircapa
+
+% ---
+% Folha de rosto
+% ---
+\imprimirfolhaderosto
+
+% ---
+% Inserir folha de aprovação
+% ---
+\include{pre-textuais/folha-de-aprovacao}
+
+% ---
+% Dedicatória
+% ---
+\include{pre-textuais/dedicatoria}
+
+% ---
+% Agradecimentos
+% ---
+\include{pre-textuais/agradecimentos}
+
+% ---
+% Epígrafe
+% ---
+\include{pre-textuais/epigrafe}
+
+% ---
+% Resummo
+% ---
+\include{pre-textuais/resumo}
+
+% ---
+% Abstract
+% ---
+\include{pre-textuais/abstract}
+
+% ---
+% Lista de Figuras
+% ---
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\cleardoublepage
+
+% ---
+% Lista de Tabelas
+% ---
+\pdfbookmark[0]{\listtablename}{lot}
+\listoftables*
+\cleardoublepage
+
+% ---
+% Siglas e Abreviaturas
+% ---
+\include{pre-textuais/siglas}
+
+% ---
+% Sumário
+% ---
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\textual
+
+% ---
+% Introducao
+% ---
+\include{textuais/introducao}
+
+% ---
+% Fundamentacoes Teoricas
+% ---
+\include{textuais/fundamentacao-teorica}
+
+% ---
+% Tecnologias Utilizadas
+% ---
+\include{textuais/tecnologias_utilizadas}
+
+% ---
+% Metodologia
+% ---
+\include{textuais/metodologia}
+
+% ----------------------------------------------------------
+% ELEMENTOS PÓS-TEXTUAIS
+% ----------------------------------------------------------
+\postextual
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Referências bibliográficas
+% ----------------------------------------------------------
+\bibliography{bibliografia}
+
+\end{document}
+

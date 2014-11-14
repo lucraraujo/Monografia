@@ -1,0 +1,54 @@
+\chapter{Metodologia}\label{metodologia}
+
+Para comparar o desempenho do APACHE e do NGINX, foram realizados testes usando a ferramenta ApacheBench.\\
+
+O ApacheBench é uma ferramenta para ser utilizada em linha de comando. Para invocar a ferramenta escreve-se o comando “ab” no terminal. A ferramenta aceita como parâmetros, entre outros, a quantidade de requisições que serão feitas e quantas requisições serão feitas de forma simultânea, além URL da \'{a}gina que ser\'{a} requisitada. O comando de uma forma genérica fica assim:\\
+\begin{verbatim}
+ab -n numero_de_requisições -c requisições_simultâneas endereço_do_servidor
+\end{verbatim}\\
+Como visto, o parâmetro “-n” indica a quantidade total de requisições serão feitas no teste e o parâmetro “-c” indica a quantidade de requisições serão feitas de forma simultânea.\\
+
+Para comparar os desempenhos dos dois servidores HTTP, foram realizados teste com quantidade de requisições entre 1.000 (mil) e 15.000 (quinze mil) pulando de mil em mil e com somente uma requisição concorrente e com 10\%, 20\%, 40\% e 80\% de concorrência de acordo com a quantidade de requisições. Esses números foram estimados tendo em vista a quantidade atual de usuário do SIGA e a quantidade de usuário que poderá ter no futuro.\\
+
+Então para cada servidor HTTP, foram feitos 75 testes listados abaixo:\\
+
+\begin{table}[htb]
+\ABNTEXfontereduzida
+\caption[Requisições Totais e Requisições Concorrentes]{Requisições Totais e Requisições Concorrentes}
+\label{tab-nivinv}
+\begin{tabular}{|>{\bfseries}c|c|c|c|c|c|}
+\hline
+\multirow{2}{*}{Requisições Totais} & \multicolumn{5}{c|}{\textbf{Requisições Concorrentes}} \\ \cline{2-6}
+& 1 & 10\% & 20\% & 40\% & 80\% \\ \hline
+1000	 & 1 & 100 & 200 & 400 & 800 \\ \hline
+2000 & 1 & 200 & 400 & 800 & 1600 \\ \hline
+3000 & 1 & 300 & 600 & 1200 & 2400 \\ \hline
+4000	 & 1 & 400 & 800 & 1600 & 3200 \\ \hline
+5000 & 1 & 500 & 1000 & 2000 & 4000 \\ \hline
+6000 & 1 & 600 & 1200 & 2400 & 4800 \\ \hline
+7000 & 1	 & 700 & 1400 & 2800 & 5600 \\ \hline
+8000 & 1 & 800 & 1600 & 3200 & 6400 \\ \hline
+9000 & 1 & 900 & 1800 & 3600 & 7200 \\ \hline
+10000 & 1 & 1000 & 2000 & 4000 & 8000 \\ \hline
+11000 & 1 & 1100 & 2200 & 4400 & 8800 \\ \hline
+12000 & 1 & 1200 & 2400 & 4800 & 9600 \\ \hline
+13000 & 1 & 1300 & 2600 & 5200 & 10400 \\ \hline
+14000 & 1 & 1400 & 2800 & 5600 & 11200 \\ \hline
+15000 & 1 & 1500 & 3000 & 6000 & 12000 \\ \hline
+
+\end{tabular}
+\legend{Quantidade de Requisições e Requisições Concorrentes}
+\end{table}
+ 
+Para cada teste realizado os seguintes dados foram obtidos a partir da resposta do servidor HTTP para o ApacheBench:
+
+\begin{itemize}
+\item Tempo total do teste em segundos;
+\item Total de dados transferido em bytes;
+\item Total de texto em HTML transferido em bytes;
+\item Número de requisições atendidas por segundo;
+\item Tempo médio por requisição em milissegundos;
+\item Tempo médio por requisição entre as requisições concorrentes em milissegundos;
+\item Taxa de transferência em Quilo Bytes por segundo;
+\item Porcentagem das requisições servidas em um período de tempo, tempo em milissegundos.
+\end{itemize}
