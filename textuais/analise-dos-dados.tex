@@ -3,7 +3,7 @@
 A análise dos dados será feita a partir dos dados coletados pelos testes realizados usando a ferramenta ApacheBench nas máquinas virtuais, cada uma utilizando um servidor HTTP diferente.\\
 Os dados coletados nos testes foram tabelados e, para uma melhor análise, foram gerados gráficos dos mesmos.
 
-\section{Algumas considerações}
+\section{Algumas Considerações}
 Com a grande quantidade de dados coletados, 75 para cada servidor HTTP totalizando 150 testes, cada teste gerando 8 parâmetros, gerando 1.200 dados, os dados serão agrupados de acordo com a quantidade total de requisições feitas no teste. \\
 Os gráficos serão divididos em 3 faixas de valores para a quantidade total de requisições.
 \begin{itemize}
@@ -13,13 +13,13 @@ Os gráficos serão divididos em 3 faixas de valores para a quantidade total de 
 \end{itemize}
 Os dados serão analisados sempre comparando os resultados obtidos pelos dois servidores HTTP.\\
 
-\section{Dados analisados}
+\section{Dados Analisados}
 Os dados que serão analisados são:
 
 \begin{itemize}
 	\item Tempo total do teste em segundos (s);
-	\item Total de dados transferido em bytes (b);
-	\item Total de texto em HTML transferido em bytes (b);
+	\item Total de dados transferido em Quilo bytes (Kbytes);
+	\item Total de texto em HTML transferido em Quilo bytes (Kbytes);
 	\item Número de requisições atendidas por segundo (X/s);
 	\item Tempo médio por requisição em milissegundos (ms);
 	\item Tempo médio por requisição entre as requisições concorrentes em milissegundos (ms);
@@ -42,8 +42,10 @@ Como foram coletados dados com 1 requisição concorrente, 10\%, 20\%, 40\% e 80
 
 \section{Gráficos}
 Todos os gráficos foram gerados usando a ferramenta de geração de gráfico do \citeonline{LOcalc}.
-\subsection{Média do tempo total de execução dos testes}
+\subsection{Média do Tempo Total de Execução Dos Testes}
 \subsubsection{Faixa 1}
+
+blabla
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.6\linewidth]{graficos/grafico1-f1} 
@@ -51,5 +53,97 @@ Todos os gráficos foram gerados usando a ferramenta de geração de gráfico do
 	\label{fig:grafico1-f1}
 \end{figure}
 
+blabla
+
+\subsubsection{Faixa 2}
+blabla
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.6\linewidth]{graficos/grafico1-f2} 
+	\caption{Média do Tempo Total de Execução dos Testes - Faixa 2}
+	\label{fig:grafico1-f2}
+\end{figure}
+blabla
+
+\subsubsection{Faixa 3}
+blabla
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.6\linewidth]{graficos/grafico1-f3} 
+	\caption{Média do Tempo Total de Execução dos Testes - Faixa 3}
+	\label{fig:grafico1-f3}
+\end{figure}
+blabla
 
 
+\subsection{Média da Quantidade Total de Dados Transmitidos}
+\subsubsection{Faixa 1}
+
+blabla
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.6\linewidth]{graficos/grafico2-f1} 
+	\caption{Média do Total de Dados Transferidos - Faixa 1}
+	\label{fig:grafico2-f1}
+\end{figure}
+
+blabla
+
+\subsubsection{Faixa 2}
+blabla
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.6\linewidth]{graficos/grafico2-f2} 
+	\caption{Média do Total de Dados Transferidos - Faixa 2}
+	\label{fig:grafico2-f2}
+\end{figure}
+blabla
+
+\subsubsection{Faixa 3}
+blabla
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.6\linewidth]{graficos/grafico2-f3} 
+	\caption{Média do Total de Dados Transferidos - Faixa 3}
+	\label{fig:grafico2-f3}
+\end{figure}
+blabla
+
+\subsection{Média da Quantidade de Texto HTML Transmitido}
+\subsubsection{Faixa 1}
+
+blabla
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.6\linewidth]{graficos/grafico3-f1} 
+	\caption{Média do Total de Texto em HTML Transferido - Faixa 1}
+	\label{fig:grafico3-f1}
+\end{figure}
+
+blabla
+
+\subsubsection{Faixa 2}
+blabla
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.6\linewidth]{graficos/grafico3-f2} 
+	\caption{Média do Total de Texto em HTML Transferido - Faixa 2}
+	\label{fig:grafico3-f2}
+\end{figure}
+blabla
+
+\subsubsection{Faixa 3}
+blabla
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.6\linewidth]{graficos/grafico3-f3} 
+	\caption{Média do Total de Texto em HTML Transferido - Faixa 3}
+	\label{fig:grafico3-f3}
+\end{figure}
+blabla
