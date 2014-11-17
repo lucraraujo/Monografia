@@ -1,31 +1,23 @@
 \chapter{Tecnologias Utilizadas}\label{tecnologias_utilizadas}
-
 \section{Apache HTTP \textit{Server}}
 O Apache HTTP \textit{Server} teve o seu primeiro lançamento publico em Abril de 1.995. Ele foi criado para ocupar o lugar deixado pelo HTTP \textit{Daemon}, na época o servidor para aplicações web mais utilizado no mundo. O HTTP \textit{Daemon} foi desenvolvido por Rob McCool quando ele trabalhava no \textit{National Center for Supercomputing Applications} – NCSA, na Universidade de Illinois, nos Estados Unidos. Porem, o desenvolvimento do HTTP \textit{Daemon} estagnou-se pois McCool havia saído da universidade. Como o código do HTTP \textit{Daemon} era aberto (\textit{open source}), vários desenvolvedores criaram correções e desenvolveram novas funcionalidades para o mesmo. Vendo a necessidade de juntar todos esses códigos desenvolvidos em separado, um grupo de desenvolvedores resolveram se juntar para compilar essas correções e novas funcionalidades. Usando como base a versão 1.3 do HTTP \textit{Daemon}, em Abril de 1.995 foi publicado o Apache HTTP \textit{Server} na versão 0.6.2. Também, nessa mesma época, foi criado o Apache \textit{Group}, grupo que mais tarde viria a se tornar o Apache \textit{Software Foundation}.\\
 Hoje, quase 20 anos após o seu primeiro lançamento, o Apache HTTP \textit{Server} é o servidor HTTP mais utilizado no mundo e a sua versão estável atual é a 2.4.\\
-
 \section{Nginx}
 O Nginx (lê-se \textit{Engine-X}) foi criado pelo russo Igor Sysoev em 2.002 tendo a primeira versão publica sendo publicada em 2.004. O Nginx foi desenvolvido com o intuito de resolver o C10K \textit{problem}.\\
 Diferentemente de outros servidores HTTP, o Nginx não usa \textit{threads} como base para manipular as requisições. Ao invés disso, ele utiliza uma arquitetura mais escalável orientada à eventos (\textit{event-driven}) assíncrona. Essa arquitetura utiliza uma quantidade pequena, porém previsível, de memória quando está trabalhando.\\
-
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=1]{figuras/nginx-how-it-works} 
 \caption{Modelo de funcionamento do Nginx.}
 \label{fig:nginx-comofunciona}
 \end{figure}
-
 O Nginx é utilizado por vários sítios de grande volume de tráfego como Netflix, GitHub, Pinterest, dentre outros.\\
-
 \section{ApacheBench}
 O ApacheBench foi criado em 1996 por Adam Twiss e, posteriormente doado ao Apache \textit{Group}. Originalmente, essa ferramenta foi desenvolvida para verificar o desempenho em servidores HTTP Apache, mas hoje ela é utilizada para fazer testes de desempenho em  praticamente qualquer servidor HTTP.
-
 \section{FastCGI}
 De acordo com \citeonline{fastcgi} FastCGI é uma interface para servidores \textit{web} rápida, aberta e segura, que resolve os problemas de desempenho herdados do CGI, sem introduzir o \textit{overhead} e complexidade de APIs proprietárias.
-
 \subsection{\textit{Common Gateway Interface}}
 A interface de fato de aplicações em servidores \textit{web} é o CGI, que foi primeiramente implementado no servidor da NCSA. O CGI tem muitos benefícios:
-
 \begin{itemize}
 	\item Simplicidade: é fácil de entender;
 	\item Independente de linguagem: Aplicações em CGI podem ser escritas em quase todas a linguagens;
@@ -33,9 +25,7 @@ A interface de fato de aplicações em servidores \textit{web} é o CGI, que foi
 	\item Padrão aberto: Alguma forma de CGI já foi implementado em todos os servidores;
 	\item Independência de arquitetura: O CGI não é ligado a uma arquitetura de computador em particular.
 \end{itemize}
-
 CGI tem alguns inconvenientes significantes. O principal problema é desempenho: como um novo processo é criado para cada requisição e descartada quando a requisição acaba,a eficiência é baixa.
-
 \subsection{Servidor de API}
 Em resposta ao problema de desempenho do CGI, várias empresas desenvolveram API's para os seus servidores.\\
 Aplicações conectadas em um servidor de API pode ser significativamente mais rápido do que programas em CGI. O problema da inicialização do CGI é melhorada, pois a aplicação é executada no processo do servidor e persiste pelas requisições. As API's dos servidores \textit{web} também oferecem mais funcionalidades do que o CGI. O desenvolvedor pode criar extensões que permitem realizar controle de acesso, pegar um acesso dos aquivos de registro(\textit{log}) do servidor e, se conectar a outros estágios do processamento de uma requisição do servidor.\\
@@ -46,12 +36,9 @@ No entanto, API's sacrificam todos os benefícios do GCI. São eles:
 	\item Não há isolamento de processos: como o processo é executado dentro do endereçamento de memória do servidor, aplicações com problemas podem corromper o núcleo do servidor, comprometer a segurança e problemas no núcleo do servidor podem corromper as aplicações;
 	\item Proprietário: Codificar a aplicação para uma determinada API força o desenvolvedor a utilizar aquele servidor em particular;
 	Arquiteturas de computador iguais: As aplicações tem que compartilhar sa mesma arquitetura do servidor \textit{web}.
-
 \end{itemize}
-
 \subsection{FastCGI}
 A interface do FastCGI combina os melhores aspectos do CGI e das API's proprietárias. Assim como o CGI, o FastCGI executa os processos de forma separada e isolada. As vantagens do FastCGI incluem:
-
 \begin{itemize}
 	\item Desempenho: Os processos do FastCGI são persistentes. Eles são reutilizados para manipular várias requisições. Isso resolve o problema de criar um novo processo para cada requisição;
 	\item Simplicidade com fácil migração do CGI: a biblioteca de aplicação do FastCGI simplifica a migração de aplicações existentes feitas usando CGI. Aplicações feitas utilizando a biblioteca de aplicações do FastCGI podem ser executadas como programa CGI;
@@ -60,14 +47,49 @@ A interface do FastCGI combina os melhores aspectos do CGI e das API's propriet�
 	\item Independência de arquitetura: O FastCGI não é ligado a uma arquitetura de computador em particular. Qualquer servidor \textit{web} pode implementar a interface do FastCGI;
 	\item Suporte à computação distribuída: FastCGI provê a habilidade de executar aplicações remotamente, o que é útil para distribuir carga e gerenciar sítios da \textit{web} externos
 \end{itemize}
-
+\section{HTML}
+De acordo com o \citeonline{w3chtml} a Web é baseada em 3 pilares:
+\begin{itemize}
+\item Um esquema de nomes para localização de fontes de informação na Web, esse esquema chama-se URI.
+\item Um Protocolo de acesso para acessar estas fontes, hoje o HTTP.
+\item Uma linguagem de Hipertexto, para a fácil navegação entre as fontes de informação: o HTML.
+\end{itemize}
+\subsection{Hipertexto}
+HTML é uma abreviação de \textit{Hypertext Markup Language} - Linguagem de Marcação de Hipertexto. Resumindo em uma frase: o HTML é uma linguagem para publicação de conteúdo (texto, imagem, vídeo, áudio e etc) na \textit{web}.\\
+O HTML é baseado no conceito de Hipertexto. Hipertexto são conjuntos de elementos – ou nós – ligados por conexões. Estes elementos podem ser palavras, imagens, vídeos, áudio, documentos etc. Estes elementos conectados formam uma grande rede de informação. Eles não estão conectados linearmente como se fossem textos de um livro, onde um assunto é ligado ao outro seguidamente. A conexão feita em um hipertexto é algo imprevisto que permite a comunicação de dados, organizando conhecimentos e guardando informações relacionadas.\\
+Para distribuir informação de uma maneira global, é necessário haver uma linguagem que seja entendida universalmente por diversos meios de acesso. O HTML se propõe a ser esta linguagem. 
+Desenvolvido originalmente por Tim Berners-Lee o HTML ganhou popularidade quando o \textit{Mosaic - browser} desenvolvido por Marc Andreessen na década de 1990 - ganhou força. A partir daí, desenvolvedores e fabricantes de navegadores utilizaram o HTML como base, compartilhando as mesmas convenções.\\
+\subsection{HTML}
+Entre 1993 e 1995, o HTML ganhou as versões HTML+, HTML2.0 e HTML3.0, onde foram propostas diversas mudanças para enriquecer as possibilidades da linguagem. Contudo, até aqui o HTML ainda não era tratado como um padrão. Apenas em 1997, o grupo de trabalho do W3C responsável por manter o padrão do código, trabalhou na versão 3.2 da linguagem, fazendo com que ela fosse tratada como prática comum.\\
+Desde o começo o HTML foi criado para ser uma linguagem independente de plataformas, navegadores e outros meios de acesso. Interoperabilidade significa menos custo. Você cria apenas um código HTML e este código pode ser lido por diversos meios, ao invés de versões diferentes para diversos dispositivos. Dessa forma, evitou-se que a Web fosse desenvolvida em uma base proprietária, com formatos incompatíveis e limitada.\\
+Por isso o HTML foi desenvolvido para que essa barreira fosse ultrapassada, fazendo com que a informação publicada por meio deste código fosse acessível por dispositivos e outros meios com características diferentes, não importando o tamanho da tela, resolução, variação de cor. Dispositivos próprios para deficientes visuais e auditivos ou dispositivos móveis e portáteis. O HTML deve ser entendido universalmente, dando a possibilidade para a reutilização dessa informação de acordo com as limitações de cada meio de acesso.
 \section{PHP}
-Escrever sobre
+PHP (acrônimo para preprocessador de hipertexto) é uma linguagem de programação de código aberto, interpretada, de propósito geral, tipagem dinâmica e fraca, procedural, reflexiva, orientada a objetos e funcional; criada em 1.995 por Rasmus Lerdorf. É uma linguagem que é melhor utilizada para desenvolvimento de sistemas \textit{web} já que pode ser inserida diretamente em códigos HTML.\\
+De acordo com \citeonline{phpwhatcando}, o PHP pode realizar qualquer tipo de atividade computacional. É focada em executar tarefa do lado do servidor, realizando qualquer tarefa que uma aplicação feita em CGI pode fazer tais como: coletar dados de um formulário, gerar páginas com conteúdo dinâmico ou enviar e recebe \textit{cookies}. Existem três áreas onde o PHP é mais utilizado:
+\begin{itemize}
+	\item \textit{Script} do lado do servidor: é a forma mais tradicional e o principal foco do PHP.
+	\item \textit{Script} de linha de comando: é uma forma de utilizar o PHP sem um servidor \textit{web} ou navegador de internet. Esse forma de uso é ideal para rotinas programadas executadas no sistema operacional. Pode, ser usadas para, também, para tarefas de processamento de textos.
+	\item Aplicações para \textit{Desktop}: PHP provavelmente não é a melhor linguagem para desenvolver aplicações com interface gráfica para computadores de mesa, mais pode ser utilizada para criação de aplicações do lado do cliente utilizando o a extensão PHP-GTK, que não é distribuída junto com a versão oficial da linguagem
+\end{itemize}
+É necessário três coisas para fazer o PHP funcionar. Um interpretador, um servidor \textit{web} e um navegador de \textit{internet}. ele pode ser utilizado em praticamente todos os sistemas operacionais, e pode ser executado em qualquer servidor \textit{web} que utilize o binário do FastCGI PHP.\\
+Com o PHP, o desenvolvedor não fica limitado a somente gerar páginas HTML. As habilidades incluem a entrega de imagens e arquivo en geral, geração de páginas em XHTML e qualquer outro arquivo XML, podendo gerar esses arquivos de forma automática e salvando eles no dispositivo de armazenamento do servidor, servindo como \textit{cache} no servidor para o conteúdo gerado dinamicamente.\\
+Uma das funcionalidades mais importantes do PHP é o suporte a uma grande variedade de bancos de dados. Desenvolver uma página que utiliza uma base de dados é simples, desde que se use uma das extensões para base de dados presente na linguagem ou se use uma camada de abstração, como por exemplo o PDO, ou conectar a qualquer base de dados que suporte o padrão ODBC via extensão.\\
+O PHP ferramentas muito úteis de processamento de texto, que inclui um analisador de expressões regulares compatível com a linguagem de programação Perl além de várias extensões e ferramentas para analisar e acessar documentos no formato XML.
 \subsection{PHP-FPM}
-Escrever sobre
+O PHP-FPM (\textit{(FastCGI Process Manager}) é uma implementação alternativa do PHP FastCGI com algumas funcionalidades úteis, principalmente, para sítios com grande acesso. Essas funcionalidade incluem:
+\begin{itemize}
+	\item Gerenciamento avançado de processos
+	\item Habilidade para iniciar processos com diferentes usuários, grupos e ambientes, escutando portas diferentes e usando diferentes arquivos de configuração;
+	\item Registro (\textit{log}) de atividades nas saídas padrão de texto (stdout) e de erros (stderr) dos sistema operacional;
+	\item Reinicialização emergencial em caso de destruição acidental da memória cache;
+\end{itemize}
 \section{PostgreSQL}
-Escrever sobre
+De acordo com \citeonline{postgresql} PostgreSQL é um sistema gerenciador de banco de dados objeto-relacional que tem sido desenvolvido de várias formas desde 1.977. Começou como um projeto chamado Ingres na \textit{University of California} em Berkeley, Estados Unidos. O Ingres foi, posteriormente, desenvolvido comercialmente pela empresa Relational Technologies.\\
+Em 1.986 uma outra equipe chefiada por Michael Stonebraker continuou o desenvolvimento do código do Ingres para criar um sistema de banco de dados usando o paradigma objeto-relacional chamado Postgres. Em 1.996, o Postgres foi renomeado para PostgreSQL.\\
+O PostgreSQL é considerado por muitos o melhor SGBD de código aberto do mundo. Provê várias funcionalidades que, normalmente, são vistas somente em produtos comerciais desenvolvidos para corporações.\\
+PostgreSQL é um projeto de código aberto. Por definição, código abertos ignifica que qualquer pessoa pode obter o código fonte, usar o programa e modificá-lo livremente sem se preocupar em infringir direitos autorais.
 \section{VirtualBox}
 Escrever sobre
 \section{Debian}
-Escrever sobre
+De acordo com \citeonline{debian}, Debian GNU/Linux é uma distribuição do sistema operacional Linux e de vários pacotes que funcionam nele.\\
+O projeto Debian foi criado por Ian Murdock em 1.993, com patrocinio inicial do projeto GNU, da \textit{Free Software Foundation}.

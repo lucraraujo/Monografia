@@ -1,6 +1,5 @@
 \chapter{Fundamentação Teórica}\label{fundamentacao-teorica}
 Este capítulo se destina a apresentar alguns conceitos para o desenvolvimento da proposta de alteração de servidor, apresentando alguns conceitos sobre redes e comunicação de computadores.
-
 \section{Aplicação cliente/servidor}
 Para entender o que é uma aplicação cliente/servidor, irei primeiramente definir o que é cliente e servidor.
 \subsection{Cliente}
@@ -18,49 +17,41 @@ Ainda de acordo com \citeonline{stallings2005}, cada servidor no ambiente client
 \subsection{Aplicações cliente/servidor}
 As aplicações cliente/servidor são um conjunto de programas que funcionam no computador cliente, ou seja, aquele que esta solicitando um recurso pela rede, e no computador servidor, aquele que provê o recurso solicitado. As solicitações de recursos ou informações partem do programa instalado no computador do usuário (cliente), trafegam por uma rede de computadores, geralmente utilizando o protocolo de comunicação HTTP até o servidor responsável por prover o o recurso ou informação solicitado pelo programa do cliente.\\
 As aplicações cliente/servidor são muito utilizadas na construção de sistemas de informação, onde os dados armazenados pelos servidores precisam estar disponíveis para os usuários do sistema. É também o principal modelo utilizado em sistemas de informação baseados na \textit{web}, onde o cliente acessa o sistema através de um navegador \textit{web}.
-
 \section{Protocolo de comunicação}
-
 \section{Modelo TCP/IP}
 O TCP/IP (\textit{Transmission Control Protocol/Internet Protocol}), é um conjunto de protocolos, resultante de pesquisas e desenvolvimentos realizados pela ARPANET (\textit{Advanced Research Project Agency Network}) e financiada pela DARPA (\textit{Defense Advanced Research Projects Agency}), agência de pesquisa militar do governo dos Estados Unidos, e que hoje são utilizados como padrões de comunicação na Internet.\\
 Ao contrário do modelo OSI(Open Systems Interconnections), o TCP/IP não pode ser considerado um modelo e sim um conjunto de protocolos. Esse protocolos, assim como no modelo OSI, podem ser organizados camadas relativamente independentes, com a diferença de que no modelo OSI existem sete camadas e no TPC/IP existem cinco, camadas essas relativamente independentes. São elas:
 \begin{itemize}
-\item Camada de aplicação
-\item Camada de transporte
-\item Camada de rede
-\item Camada de enlace
-\item Camada física
+	\item Camada de aplicação
+	\item Camada de transporte
+	\item Camada de rede
+	\item Camada de enlace
+	\item Camada física
 \end{itemize}
-
 Só para efeito de comparação, as camadas do modelo OSI são:
 \begin{itemize}
-\item Camada de aplicação
-\item Camada de apresentação
-\item Camada de sessão
-\item Camada de transporte
-\item Camada de rede
-\item Camada de enlace
-\item Camada física
+	\item Camada de aplicação
+	\item Camada de apresentação
+	\item Camada de sessão
+	\item Camada de transporte
+	\item Camada de rede
+	\item Camada de enlace
+	\item Camada física
 \end{itemize}
-
 \subsection{Camada de aplicação e seus principais protocolos}
 \subsection{Camada de transporte e seus principais protocolos}
 \subsection{Camada de rede e seus principais protocolos}
 \subsection{Camada de enlace e seus principais protocolos}
 \subsection{Camada de física e seus principais protocolos}
-
 \section{Protocolo TCP}
-
 \section{\textit{World Wide Web}}
-
 \section{Protocolo HTTP}
 De acordo com \citeonline{stallings2005}, o \textit{Hypertext Transfer Protocol} (Protocolo de Transferência de Hipertexto em tradução livre) é o protocolo básico da \textit{World Wide Web} e pode ser usado em qualquer aplicação cliente/servidor que envolve hipertexto e faz parte da camada de transporte do modelo TCP/IP.\\
 O HTTP não serve somente para transferir hipertexto. É um protocolo para transferir informações com uma eficiência necessária. Os dados transferidos podem ser texto puro, hipertexto, áudio, imagens ou qualquer outro dado disponível na Internet.\\
 O HTTP é um protocolo cliente/servidor orientado para transações. O seu uso mais típico é acontece entre um navegador \textit{web} e um servidor \textit{web}, sempre utilizando o modelo TCP afim de manter a confiabilidade.\\
 Cada transação utiliza uma nova conexão TCP entre o cliente e o servidor, sendo cada transação tratada de forma independente. Após o término de cada transação, a conexão entre cliente e servidor é fechada. Por ser um protocolo sem estado, é o protocolo adequado para a maior parte das aplicações.
-
+\section{\textit{Framework}}
 \section{Servidor \textit{web}}
-
 \section{C10K \textit{problem}}
 O C10k \textit{problem} consiste em solucionar o problema de atender a 10.000 requisições concorrentemente.\\
-Escrever sobre
+\textbf{Escrever sobre}
