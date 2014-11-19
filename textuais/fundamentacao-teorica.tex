@@ -1,5 +1,6 @@
 \chapter{Fundamentação Teórica}\label{cap:fundamentacao-teorica}
-Este capítulo se destina a apresentar alguns conceitos para o desenvolvimento da proposta de alteração de servidor, apresentando alguns conceitos sobre redes e comunicação de computadores.
+Este capítulo se destina a apresentar alguns conceitos para o entendimento da 
+proposta desse estudo.
 \section{Aplicação cliente/servidor}
 Para entender o que é uma aplicação cliente/servidor, irei primeiramente definir o que é cliente e servidor.
 \subsection{Cliente}
@@ -18,6 +19,25 @@ Ainda de acordo com \citeonline{stallings2005}, cada servidor no ambiente client
 As aplicações cliente/servidor são um conjunto de programas que funcionam no computador cliente, ou seja, aquele que esta solicitando um recurso pela rede, e no computador servidor, aquele que provê o recurso solicitado. As solicitações de recursos ou informações partem do programa instalado no computador do usuário (cliente), trafegam por uma rede de computadores, geralmente utilizando o protocolo de comunicação HTTP até o servidor responsável por prover o o recurso ou informação solicitado pelo programa do cliente.\\
 As aplicações cliente/servidor são muito utilizadas na construção de sistemas de informação, onde os dados armazenados pelos servidores precisam estar disponíveis para os usuários do sistema. É também o principal modelo utilizado em sistemas de informação baseados na \textit{web}, onde o cliente acessa o sistema através de um navegador \textit{web}.
 \section{Protocolo de comunicação}
+De acordo com o \citeonline{dop}, um dos significados de protocolo é Acordo 
+regulamentado entre países ou empresas. Aplicando esse conceito na computação, 
+protocolo pode ser entendido como uma convenção que controla e possibilita uma 
+conexão, comunicação, transferência de dados entre dois sistemas 
+computacionais. De maneira simples, um protocolo pode ser definido como as 
+regras que governam a sintaxe, semântica e sincronização da comunicação.\\
+De acordo com \citeonline{stallings2005}, um protocolo é usado para a 
+comunicação entre entidades em sistemas diferentes. Para que entidades 
+diferentes se cominiquem com facilidade, elas precisam adotar uma ¨língua¨ em 
+comum. O que e como é comunicado deve estar de acordo com as convenções 
+combinadas entre as entidades envolvidas. Essas convenções são denominadas 
+protocolos, que nada mais é do que um conjunto de regras controlando a troca de 
+dados entre entidades. Os principais elementos de um protocolo são:
+\begin{itemize}
+	\item Sintaxe: Inclui elementos como formato de dados e níveis de sinal;
+	\item Semântica: Inclui informações de controle para coordenação e 
+	tratamento de erro;
+	\item Temporização: Inclui combinação de velocidade e sequência.
+\end{itemize}
 \section{Modelo TCP/IP}
 O TCP/IP (\textit{Transmission Control Protocol/Internet Protocol}), é um conjunto de protocolos, resultante de pesquisas e desenvolvimentos realizados pela ARPANET (\textit{Advanced Research Project Agency Network}) e financiada pela DARPA (\textit{Defense Advanced Research Projects Agency}), agência de pesquisa militar do governo dos Estados Unidos, e que hoje são utilizados como padrões de comunicação na Internet.\\
 Ao contrário do modelo OSI(Open Systems Interconnections), o TCP/IP não pode ser considerado um modelo e sim um conjunto de protocolos. Esse protocolos, assim como no modelo OSI, podem ser organizados camadas relativamente independentes, com a diferença de que no modelo OSI existem sete camadas e no TPC/IP existem cinco, camadas essas relativamente independentes. São elas:
@@ -38,11 +58,32 @@ Só para efeito de comparação, as camadas do modelo OSI são:
 	\item Camada de enlace
 	\item Camada física
 \end{itemize}
-\subsection{Camada de aplicação e seus principais protocolos}
-\subsection{Camada de transporte e seus principais protocolos}
-\subsection{Camada de rede e seus principais protocolos}
-\subsection{Camada de enlace e seus principais protocolos}
-\subsection{Camada de física e seus principais protocolos}
+%aplicação
+\subsection{Camada de aplicação}
+%host a host
+\subsection{Camada de transporte}
+%inter-rede
+\subsection{Camada de rede}
+%acesso à rede
+\subsection{Camada de enlace}
+A camada de enlace (ou de acesso à rede) trata da troca de dados entre um 
+sistema final e a rede à qual está conectada \cite{stallings2005}. Para que 
+haja uma comunicação, o computador de origem da mensagem deve informar para a 
+camada de enlace qual o endereço do computador de destino, para que a rede 
+possa entregar a mensagem para o destinatário correto. O computador de origem 
+pode requerer alguns serviços especiais, como por exemplo, prioridade no envio 
+da mensagem. O software utilizado nessa camada irá depender do tipo de rede a 
+ser usado, sendo que diferentes padrões foram desenvolvidos para comutação de 
+circuitos pacotes.\\
+Quando dois computadores estão conectado a redes diferentes, se faz necessário 
+o uso de procedimentos para que os dados trafeguem entre as redes. Nesses 
+casos, se utiliza o protocolo IP (\textit{Internet Protocol}). Esse protocolo 
+oferece a função de interconectar várias redes através de roteadores. Os 
+roteadores são computadores especializados em conectar duas ou mai redes 
+diferentes, e o protocolo IP é também utilizado e implementado nos roteadores.
+\subsection{Camada física}
+
+
 \section{Protocolo TCP}
 \section{\textit{World Wide Web}}
 \section{Protocolo HTTP}
