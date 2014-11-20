@@ -17,14 +17,17 @@ Os dados serão analisados sempre comparando os resultados obtidos pelos dois se
 Os dados que serão analisados são:
 
 \begin{itemize}
-	\item Tempo total do teste em segundos (s);
-	\item Total de dados transferido em Quilo bytes (Kbytes);
-	\item Total de texto em HTML transferido em Quilo bytes (Kbytes);
-	\item Número de requisições atendidas por segundo (X/s);
-	\item Tempo médio por requisição em milissegundos (ms);
-	\item Tempo médio por requisição entre as requisições concorrentes em milissegundos (ms);
-	\item Taxa de transferência em Quilo Bytes por segundo (Kb/s);
-	\item Porcentagem das requisições servidas em um período de tempo, tempo em milissegundos (X\%ms).
+	\item Tempo total do teste em segundos (s); %grafico1 ok
+	\item Total de dados transferido em Quilo bytes (Kbytes); %%grafico2 ok
+	\item Total de texto em HTML transferido em Quilo bytes (Kbytes); 
+	%%grafico3 ok
+	\item Número de requisições atendidas por segundo (X/s); %%grafico4 ok
+	\item Tempo médio por requisição entre as requisições concorrentes em 
+	milissegundos (ms); %gráfico5 ok
+	\item Taxa de transferência em Quilo Bytes por segundo (Kb/s); %grafico6 
+	%quase ok
+	\item Porcentagem das requisições servidas em um período de tempo, tempo em 
+	milissegundos (X\%ms). %grafico 7
 \end{itemize}
 
 Dos dados analisados, os mais críticos são:
@@ -32,118 +35,14 @@ Dos dados analisados, os mais críticos são:
 \begin{itemize}
 	\item Total de texto em HTML transferido em bytes (b);
 	\item Número de requisições atendidas por segundo (X/s);
-	\item Tempo médio por requisição em milissegundos (ms);
-	\item Tempo médio por requisição entre as requisições concorrentes em milissegundos (ms);
+	\item Tempo médio por requisição entre as requisições concorrentes em 
+	milissegundos (ms);
 	\item Taxa de transferência em Quilo Bytes por segundo (Kb/s);
 	\item Porcentagem das requisições servidas em um período de tempo, tempo em milissegundos (X\%ms).
 \end{itemize}
 
-Como foram coletados dados com 1 requisição concorrente, 10\%, 20\%, 40\% e 80\%, os gráficos serão criados utilizando as médias dos valores coletados, desprezando para o cálculo da média os testes feitos com uma requisição concorrente.
+Como foram coletados dados com 10\%, 20\%, 40\% e 80\%, os gráficos serão 
+criados utilizando as médias dos valores coletados, desprezando para o cálculo 
+da média os testes feitos com uma requisição concorrente.
 
-\section{Gráficos}
-Todos os gráficos foram gerados usando a ferramenta de geração de gráfico do \citeonline{LOcalc}.
-\subsection{Média do Tempo Total de Execução Dos Testes}
-\subsubsection{Faixa 1}
-
-blabla
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=0.6\linewidth]{graficos/grafico1-f1} 
-	\caption{Média do Tempo Total de Execução dos Testes - Faixa 1}
-	\label{fig:grafico1-f1}
-\end{figure}
-
-blabla
-
-\subsubsection{Faixa 2}
-blabla
-
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=0.6\linewidth]{graficos/grafico1-f2} 
-	\caption{Média do Tempo Total de Execução dos Testes - Faixa 2}
-	\label{fig:grafico1-f2}
-\end{figure}
-blabla
-
-\subsubsection{Faixa 3}
-blabla
-
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=0.6\linewidth]{graficos/grafico1-f3} 
-	\caption{Média do Tempo Total de Execução dos Testes - Faixa 3}
-	\label{fig:grafico1-f3}
-\end{figure}
-blabla
-
-
-\subsection{Média da Quantidade Total de Dados Transmitidos}
-\subsubsection{Faixa 1}
-
-blabla
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=0.6\linewidth]{graficos/grafico2-f1} 
-	\caption{Média do Total de Dados Transferidos - Faixa 1}
-	\label{fig:grafico2-f1}
-\end{figure}
-
-blabla
-
-\subsubsection{Faixa 2}
-blabla
-
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=0.6\linewidth]{graficos/grafico2-f2} 
-	\caption{Média do Total de Dados Transferidos - Faixa 2}
-	\label{fig:grafico2-f2}
-\end{figure}
-blabla
-
-\subsubsection{Faixa 3}
-blabla
-
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=0.6\linewidth]{graficos/grafico2-f3} 
-	\caption{Média do Total de Dados Transferidos - Faixa 3}
-	\label{fig:grafico2-f3}
-\end{figure}
-blabla
-
-\subsection{Média da Quantidade de Texto HTML Transmitido}
-\subsubsection{Faixa 1}
-
-blabla
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=0.6\linewidth]{graficos/grafico3-f1} 
-	\caption{Média do Total de Texto em HTML Transferido - Faixa 1}
-	\label{fig:grafico3-f1}
-\end{figure}
-
-blabla
-
-\subsubsection{Faixa 2}
-blabla
-
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=0.6\linewidth]{graficos/grafico3-f2} 
-	\caption{Média do Total de Texto em HTML Transferido - Faixa 2}
-	\label{fig:grafico3-f2}
-\end{figure}
-blabla
-
-\subsubsection{Faixa 3}
-blabla
-
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=0.6\linewidth]{graficos/grafico3-f3} 
-	\caption{Média do Total de Texto em HTML Transferido - Faixa 3}
-	\label{fig:grafico3-f3}
-\end{figure}
-blabla
+\input{graficos/graficos}
