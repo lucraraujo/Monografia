@@ -1,9 +1,9 @@
-\chapter{Ambiente de Testes}\label{cap:ambiente-de-testes}
+\section{Ambiente de Testes}
 
 Para fazer os teste da forma mais neutra possível, foram criadas duas máquinas virtuais usando o software de virtualização VirtualBox na sua versão 3.4.10.\\
 Todos os programas utilizados nos ambientes de teste foram instalados pelo gerenciador de pacotes nativo da distribuição Linux Debian \textit{aptitude} e disponíveis nos repositórios oficiais do Debian, exceto o SGBD PostgreSQL que foi instalado usando o \textit{aptitude} porém através do repositório oficial do PostgreSQL para o Linux Debian 7 pois nos repositórios do Debian não havia disponível a versão mais recente e utilizada pelo banco de dados do SIGA.
 
-\section{Configurações comuns às duas máquinas virtuais}
+\subsection{Configurações comuns às duas máquinas virtuais}
  Ambas máquinas virtuais tinhas as configurações rigorosamente iguais. São elas:
 \begin{itemize}
 \item \textbf{Sistema Operacional}: Linux Debian 7 “Wheezy” 64 bits mais atualizado;
@@ -13,7 +13,7 @@ Todos os programas utilizados nos ambientes de teste foram instalados pelo geren
 \item \textbf{Quantidade de núcleos disponível para processamento}: 1 núcleo.
 \end{itemize}
 
-\section{Máquina Virtual Apache}
+\subsection{Máquina Virtual Apache}
 Na máquina virtual destinada aos testes com o servidor HTTP Apache, os programas utilizados foram:
 \begin{itemize}
 \item Apache HTTP Server na versão 2.2.22;
@@ -21,7 +21,7 @@ Na máquina virtual destinada aos testes com o servidor HTTP Apache, os programa
 \item php5-common na versão 5.4.4.
 \end{itemize}
 
-\section{Máquina Virtual Nginx}
+\subsection{Máquina Virtual Nginx}
 Na maquina virtual destinada aos testes com o servidor HTTP Nginx, os programas utilizados foram:
 
 \begin{itemize}
