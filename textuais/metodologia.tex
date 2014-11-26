@@ -1,22 +1,35 @@
 \chapter{Metodologia}\label{cap:metodologia}
-Para comparar o desempenho do Apache e do Nginx, foram realizados testes usando 
-a ferramenta ApacheBench.\\
-O ApacheBench é uma ferramenta para ser utilizada em linha de comando. Para 
-invocar a ferramenta escreve-se o comando ``ab'' no terminal. A ferramenta 
-aceita como parâmetros, entre outros, a quantidade de requisições que serão 
-feitas, quantas requisições serão feitas de forma simultânea e a URL da página 
-que será requisitada. O comando de uma forma genérica fica assim:
+A descrição da metodologia utilizada para a coleta e análise dos dados é de 
+extrema importância para o estudo. A partir dos dados coletado é que será 
+possível determinar se os objetivos foram alcançados. Nesse capítulo irei falar 
+sobre a metodologia de coleta e análise de dados.\\
+
+\section{Coleta dos dados}
+A coleta dos dados foram realizadas com o uso da ferramenta ApacheBench. O 
+ApacheBench é uma ferramenta de para realizar testes de carga em servidores 
+\textit{web} utilizada em linha de comando. Para invocar a ferramenta 
+escreve-se o comando ``ab'' no terminal aceitando como parâmetros, entre 
+outros, a quantidade total de requisições que serão feitas, quantas requisições 
+serão feitas de forma simultânea e a URL da página que será requisitada. O 
+comando de uma forma genérica fica assim:
 \begin{verbatim}
 ab -n numero_de_requisições -c requisições_simultâneas endereço_do_servidor
 \end{verbatim}
 O parâmetro ``-n'' indica a quantidade total de requisições serão feitas no 
 teste e o parâmetro ``-c'' indica a quantidade de requisições serão feitas de 
-forma simultânea.\\
-Para comparar os desempenhos dos dois servidores HTTP, foram realizados teste 
-com quantidade de requisições entre 1.000 (mil) e 15.000 (quinze mil) pulando 
-de mil em mil, com 10\%, 20\%, 40\% e 80\% de concorrência de acordo com a 
-quantidade de requisições. Então para cada servidor HTTP, foram feitos 75 
-testes listados abaixo:
+forma simultânea. Ao fim da execução do teste, o ApacheBench retorna os os 
+dados coletados.
+
+\input{textuais/ambiente-de-testes}
+
+\section{Definição dos valores utilizados nos testes}
+De acordo com o último levantamento, a universidade conta com 7.252 
+utilizadores, entre alunos, professores e funcionário técnicos-administrativos.
+Com base nesse dado, foram determinados os valores utilizados nos testes, ou 
+seja, cerca de 7.000 usuário ativos atualmente projetando mais que o dobro de 
+usuário no futuro (15.000) e com cargas de acesso simultâneo de 10\%, 20\%, 
+40\% e 80\% para cada quantidade total de utilizadores. Os valores utilizados 
+nos testes estão descritos na tabela \ref{tab:requisicoes}.
 \begin{table}[htb]
 	\centering
 \ABNTEXfontereduzida
@@ -45,16 +58,30 @@ Concorrentes}} \\ \cline{2-5}
 \end{tabular}
 \legend{Quantidade de Requisições Totais e Requisições Concorrentes}
 \end{table}
-Para cada teste realizado os seguintes dados foram obtidos a partir da resposta do servidor HTTP para o ApacheBench:
+Para cada valor de requisições totais, foram testados quatro cenários de acesso 
+simultâneo: 10, 20, 40, e 80 porcento, totalizando 60 testes. Os dados obtidos 
+nos testes foram tabelados em uma planilha eletrônica e analisados a partir de 
+gráficos.
+
+\section{Métricas utilizadas}
+As métricas utilizadas para comparar o desempenho dos servidores HTTP são as 
+mesmas métricas calculadas e entregues pelo ApacheBencch. São elas:
 \begin{itemize}
 	\item Tempo total do teste em segundos (s);
 	\item Total de dados transferido em bytes (b);
 	\item Total de texto em HTML transferido em bytes (b);
-	\item Número de requisições atendidas por segundo (N/s);
 	\item Tempo médio por requisição em milissegundos (ms);
-	\item Tempo médio por requisição entre as requisições concorrentes em milissegundos (ms);
+	\item Tempo médio por requisição entre as requisições concorrentes em 
+	milissegundos (ms);
 	\item Taxa de transferência em Quilo Bytes por segundo (Kb/s);
-	\item Porcentagem das requisições servidas em um período de tempo, tempo em milissegundos (X\%ms).
+	\item Porcentagem das requisições servidas em um período de tempo, tempo em 
+	milissegundos (X\%/ms).
 \end{itemize}
 
-\input{textuais/ambiente-de-testes}
+\section{Organização dos dados}
+
+\begin{itemize}
+	\item[Faixa 1] Entre 1.000 e 5.000 requisições totais;
+	\item[Faixa 2] Entre 6.000 e 10.000 requisições totais;
+	\item[Faixa 3] Entre 11.000 e 15.000 requisições totais;
+\end{itemize}
