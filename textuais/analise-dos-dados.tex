@@ -1,47 +1,4 @@
-\chapter{Análise dos Dados}\label{cap:analise-dos-dados}
-
-A análise dos dados será feita a partir dos dados coletados pelos testes realizados usando a ferramenta ApacheBench nas máquinas virtuais, cada uma utilizando um servidor HTTP diferente.\\
-Os dados coletados nos testes foram tabelados e, para uma melhor análise, foram gerados gráficos dos mesmos.
-
-\section{Algumas Considerações}
-Com a grande quantidade de dados coletados, 75 para cada servidor HTTP totalizando 150 testes, cada teste gerando 8 parâmetros, gerando 1.200 dados, os dados serão agrupados de acordo com a quantidade total de requisições feitas no teste. \\
-Os gráficos serão divididos em 3 faixas de valores para a quantidade total de requisições.
-\begin{itemize}
-	\item[Faixa 1] Entre 1.000 e 5.000 requisições totais;
-	\item[Faixa 2] Entre 6.000 e 10.000 requisições totais;
-	\item[Faixa 3] Entre 11.000 e 15.000 requisições totais;
-\end{itemize}
-Além dos dados agrupados em faixas, será exibido também um gráfico geral com 
-todos as médias dos quinze testes.
-Os dados serão analisados sempre comparando os resultados obtidos pelos dois servidores HTTP.\\
-
-\section{Dados Analisados}
-Os dados que serão analisados são:
-\begin{itemize}
-	\item Tempo total de execução do teste em segundos (s); %grafico1 ok
-	\item Total de dados transferido em Quilo bytes (Kbytes); %%grafico2 ok
-	\item Total de texto em HTML transferido em Quilo bytes (Kbytes); 
-	%%grafico3 ok
-	\item Número de requisições atendidas por segundo (N/s); %%grafico4 ok
-	\item Tempo médio por requisição entre as requisições concorrentes em 
-	milissegundos (ms); %gráfico5 ok
-	\item Taxa de transferência em Quilo Bytes por segundo (Kb/s); %grafico6 
-	%quase ok
-	\item Porcentagem das requisições servidas em um período de tempo, tempo em 
-	milissegundos (X\%/ms). %grafico 7
-\end{itemize}
-Dos dados analisados, os mais críticos para compara o desempenho são:
-\begin{itemize}
-	\item Total de texto em HTML transferido em bytes (b);
-	\item Número de requisições atendidas por segundo (N/s);
-	\item Tempo médio por requisição entre as requisições concorrentes em 
-	milissegundos (ms);
-	\item Taxa de transferência em Quilo Bytes por segundo (Kb/s);
-	\item Porcentagem das requisições servidas em um período de tempo, tempo em 
-	milissegundos (X\%/ms).
-\end{itemize}
-Como foram coletados dados com 10\%, 20\%, 40\% e 80\%, os gráficos serão 
-criados utilizando as médias dos valores coletados.
+\chapter{Análise dos dados}\label{cap:analise-dos-dados}
 
 \input{graficos/graficos}
 
