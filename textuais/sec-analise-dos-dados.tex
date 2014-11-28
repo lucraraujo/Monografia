@@ -1,1 +1,21 @@
 \section{Análise}\label{sec:analise-dos-dados}
+Os dados serão analisados métrica por métrica.
+\subsection{Tempo Total de Execução do Teste}
+O tempo total de execução do tem como finalidade mostrar o tempo em que o 
+processo do ApacheBench responsável pelo teste ficou em execução no sistema 
+operacional. Tendo em vista que o processo do ApacheBench pode fica em execução 
+por mais tempo do que a realização do teste e que uma requisição pode demorar a 
+responder, atrasando o fim do teste, essa métrica dá uma noção do desempenho do 
+servidos, mais não deve ser levado em consideração em uma análise adequada.\\
+Ao analisar o gráfico e os dados da Faixa 1, é possível ver que os testes no 
+servidor Apache demoraram, em média 5,85 vezes mais do que no servidor Nginx. 
+Na Faixa 2, os testes demoraram 6,95 vezes mais para serem executados no 
+Apache. Na Faixa 3, os testes no Nginx demoraram, em média 5,64 vezes menos 
+para serem executados. O pior caso em termos de diferença de desempenho 
+aconteceu nos testes com 6.000 requisições totais, onde o Apache demorou 
+aproximadamente 7,11 vezes mais para seres executados (20,61s no Nginx contra 
+146,64 segundos no Apache).\\
+Em termos gerais, levando em consideração os quinze valores de requisições 
+totais, o tempo de execução dos testes no Apache foram em média 6,76 vezes mais 
+lentos do que no Nginx. A soma dos tempos de totais de teste foram: 439,44 
+segundos para o Nginx contra 2522,08 segundos para o Apache.
