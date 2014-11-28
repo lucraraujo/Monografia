@@ -1,5 +1,26 @@
 \chapter{Análise dos dados}\label{cap:analise-dos-dados}
-
+A análise dos dados é essencial para este estudo. É a partir dessa análise que 
+será possível determinar se o servidor HTTP objeto do estudo, o Nginx é 
+realmente mais eficiente do que o Apache. Os dados utilizados para gerar dos 
+gráficos são a média dos quatro testes realizados para cada quantidade total de 
+requisições.\\
+A análise será feita a partir da construção de gráficos comparativos entre os 
+servidores Apache e Nginx, analisando cada métrica disponibilizada pelo 
+ApacheBench.
+\section{Organização dos gráficos}
+Para melhor analisar o comportamento dos dois servidores em cada métrica, foram 
+gerados quatro gráficos: três separados em faixas de 
+acordo com a quantidade total de requisições e um gráfico com todas as 
+quantidades totais de requisições testadas. As faixas de valores são:
+\begin{itemize}
+	\item \textbf{Faixa 1} - Entre 1.000 e 5.000 requisições totais;
+	\item \textbf{Faixa 2} - Entre 6.000 e 10.000 requisições totais;
+	\item \textbf{Faixa 3} - Entre 11.000 e 15.000 requisições totais;
+\end{itemize}
+Dispondo os gráficos dessa forma, será possível analisar os dados de acordo com 
+a quantidade de usuários utilizando o sistema e analisar o comportamento do 
+servidor HTTP de forma geral. Os gráficos serão apresentados todos de uma só 
+vez e a análise dos dados será feita na seção \ref{sec:analise-dos-dados}.
 \input{graficos/graficos}
 
 \input{textuais/sec-analise-dos-dados}
