@@ -8,11 +8,11 @@ da rede de computadores usando o protocolo HTTP. Esses softwares são chamados
 servidores HTTP.\\
 O aumento do uso de sistemas baseados na \textit{web} por organizações criou a 
 necessidade de desenvolver aplicações que geram conteúdo dinamicamente. São 
-essas aplicações que permitem as organizações entregar produtos, serviços e 
+essas aplicações que permitem às organizações entregarem produtos, serviços e 
 mensagens cujas formas e conteúdos são, em parte, determinadas pelas 
-necessidades do usuário que será atendido.\\
-Esse movimento para se afastar de conteúdos estáticos está levando ao limite e 
-está expondo as fragilidades dos ambientes onde essas aplicações são 
+necessidades do usuário.\\
+Este movimento para se afastar de conteúdos estáticos está levando ao limite e 
+expões as fragilidades dos ambientes onde essas aplicações são 
 executadas. Mais importante, esses ambientes não oferecem o desempenho que 
 essas aplicações exigem. É preciso uma nova infraestrutura de comunicação para 
 conectar servidores \textit{web} com essas novas aplicações.\\
@@ -20,43 +20,42 @@ De acordo com \citeonline{bondi2000}, escalabilidade é um atributo desejável d
 uma rede, sistema ou processo. O conceito tem a ver com a habilidade do sistema 
 em acomodar uma quantidade sempre maior de elementos ou objetos, de processar 
 uma quantidade crescente de trabalho de forma fácil e ou ser suscetível a 
-ampliação. Quando se está desenvolvimento um sistema, geralmente pede-se que 
+ampliação. Quando se está desenvolvimento um sistema, deseja-se que 
 ele seja escalável.\\
 Quando se diz que um sistema não é escalável (ou que ele não escala), damos a 
 entender que o custo adicional de lidar com o aumento em trafego ou tamanho é 
 excessivo, ou que o sistema não consegue lidar com esse nível elevado de 
-acesso. O custo pode ser quantificado de várias formas, incluindo mas não 
-limitado à tempo de resposta, uso de processamento, espaço, memória e até mesmo 
-dinheiro. Um sistema que não escala bem adiciona custos de manutenção ou 
+acesso. O custo pode ser quantificado de várias formas, incluído, porém não 
+limitado à tempo de resposta, uso de processamento, espaço, memória ou até 
+mesmo dinheiro. Um sistema que não escala bem, adiciona custos de manutenção ou 
 danifica a qualidade do serviço, pode atrasar ou privar o usuário de 
-oportunidades de lucro e eventualmente ele precisará ser substituído.\\
-A escalabilidade de um sistema sujeito a crescimento é crucial para o seu 
+oportunidades de lucro e, eventualmente, precisará ser substituído.\\
+A escalabilidade de um sistema sujeito a expansão é crucial para o seu 
 sucesso a longo prazo. Ao mesmo tempo, o conceito de escalabilidade e o 
-entendimento dos fatores que aumentam ou diminuem são vagos e até mesmo 
-subjetivos. Desenvolvedores de sistemas e analistas de desempenho tem um 
-sentimento intuitivo sobre escalabilidade, mas os fatores determinantes não são 
-claros e podem variar de um sistema para outro.\\
-A escalabilidade de um sistema pode ser arruinado por desperdícios herdados de 
-ações repetidas de forma frequente. Também pode ser arruinado pela presença de 
-algoritmos de acesso que levam a \textit{deadlock} ou que resultam em um 
-escalonamento ruim de recursos. Tais sistemas podem funcionar bem quando a 
-carga está baixa, mas sofrer uma degradação substancial de desempenho quando a 
-carga aumenta.\\
-Hoje, na UFVJM, é utilizado o SIGA – Sistema Integrado de Gestão Acadêmica, 
-comprado em 2.007 da Universidade Federal de Juiz de Fora.O SIGA é desenvolvido 
-utilizando a linguagem de programação PHP e o \textit{framework} Miolo e 
-utiliza o Apache HTTP \textit{Server} como servidor HTTP e o PostgreSQL como 
-SGBD.\\
+entendimento dos fatores que aumenta ou diminui são vagos e até mesmo 
+subjetivos. Desenvolvedores de sistemas e analistas de desempenho têm um 
+sentimento intuitivo sobre escalabilidade, pois os fatores determinantes não 
+são claros e podem variar de um sistema para outro.\\
+A escalabilidade de um sistema pode ser comprometida por desperdícios herdados 
+de ações repetidas de forma frequente, pela presença de algoritmos de acesso 
+que levam a \textit{deadlock} ou que resultam em um escalonamento ruim de 
+recursos. Tais sistemas podem funcionar bem quando a carga está baixa, mas 
+sofrer uma degradação substancial de desempenho quando a carga aumenta.\\
+Atualmente, a UFVJM, utiliza o SIGA – Sistema Integrado de Gestão Acadêmica, 
+adquirido da Universidade Federal de Juiz de Fora em 2007. O sistema é 
+desenvolvido na linguagem de programação PHP com o apoio do \textit{framework} 
+Miolo e utiliza o Apache HTTP \textit{Server} como servidor HTTP e o PostgreSQL 
+como SGBD.\\
 O Apache, desde 1.995 tem sido o servidor HTTP mais utilizado no mundo. Em 
 Outubro de 2.014, de acordo com pesquisa realizada em 1.028.932.208 de sítios 
 pela empresa Netcraft, o Apache era usado por 37,79\% (385.354.994) desses 
 sítios, com o Microsoft IIS aparecendo em segundo com 33,58\% (345.485.419) e o 
 Nginx em terceiro com 14,42\% (148.330.190) de participação nos sítios, como 
 visto na figura \ref{fig:webservers-utilizacao}.\\
-Nessa mesma pesquisa, entre os 1 milhão de sites mais acessados no mundo, o 
-Apache é utilizado em 50,19\% (501,922), com o Nginx em segundo lugar com 
-14,36\% (25,588,943), como visto na figura 
-\ref{fig:webservers-utilizacao-milhao}\\.
+Nessa mesma pesquisa, realizada com base em um milhão dos sites mais acessados 
+no mundo, o Apache é apontado como o servidor mais utilizado por 50,19\% 
+(501,922) destes, sendo o Nginx apontado em segundo lugar com 14,36\% 
+(25,588,943), conforme a figura \ref{fig:webservers-utilizacao-milhao}\\.
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=1\linewidth]{figuras/grafico1}
@@ -74,12 +73,12 @@ Apache é utilizado em 50,19\% (501,922), com o Nginx em segundo lugar com
 Analisando os gráficos presentes nas figuras \ref{fig:webservers-utilizacao} e 
 \ref{fig:webservers-utilizacao-milhao}, é possível notar uma queda na 
 utilização do Apache em detrimento de outros servidores HTTP, sendo mais 
-notório a queda na utilização entre os 1 milhão de sítios mais acessados. É 
+notória a queda na utilização entre 1 milhão de sítios mais acessados. É 
 possível notar também o aumento no uso do Nginx, principalmente entre os 1 
 milhão de sítios mais acessados no mundo. É necessário frisar que só porque uma 
-tecnologia está em ascensão significa que ela é melhor, mais é necessário 
-investigar os motivos pelo qual tal tecnologia está crescendo em número de 
-utilizadores.\\
+tecnologia está em ascensão, não significa que ela é melhor, mas sim é 
+necessário investigar os motivos pelo qual a tecnologia está crescendo em 
+número de utilizadores.\\
 Tendo sido desenvolvidos em épocas diferentes, o Apache e o Nginx trabalham de 
 forma diferente na hora de atender as requisições HTTP que chegam ao servidor.\\
 De acordo com \citeonline{rowe}, o Apache cria processos e \textit{threads} 
