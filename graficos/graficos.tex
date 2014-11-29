@@ -1,4 +1,4 @@
-\section{Gráficos}
+\section{}
 Nessa seção será apresentado todos os gráficos gerados a partir dos dados 
 coletados. A análise dos dados será feita na seção 
 \ref{sec:analise-dos-dados}.\\
@@ -6,7 +6,12 @@ Todos os gráficos foram gerados usando a ferramenta de geração de gráfico do
 \citeonline{LOcalc}.
 % %GRAFICO 1
 \subsection{Média do Tempo Total de Execução Dos Testes}
-
+O tempo total de execução do tem como finalidade mostrar o tempo em que o 
+processo do ApacheBench responsável pelo teste ficou em execução no sistema 
+operacional. Tendo em vista que o processo do ApacheBench pode fica em execução 
+por mais tempo do que a realização do teste e que uma requisição pode demorar a 
+responder, atrasando o fim do teste, essa métrica dá uma noção do desempenho do 
+servidos, mais não deve ser levado em consideração em uma análise adequada.\\
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\linewidth]{graficos/grafico1-f1} 
@@ -34,9 +39,21 @@ Todos os gráficos foram gerados usando a ferramenta de geração de gráfico do
 	\caption{Média do Tempo Total de Execução dos Testes}
 	\label{fig:grafico1}
 \end{figure}
+Ao analisar o gráfico e os dados da Faixa 1, é possível ver que os testes no 
+servidor Apache demoraram, em média 6,31 vezes mais do que no servidor Nginx. 
+Na Faixa 2, os testes demoraram 7,57 vezes mais para serem executados no 
+Apache. Na Faixa 3, os testes no Nginx demoraram, em média 5,61 vezes menos 
+para serem executados.\\
+Em termos gerais, levando em consideração os quinze valores de requisições 
+totais, os tempos de execução dos testes no Apache foram em média 6,50 vezes 
+mais lentos do que no Nginx. A soma dos tempos de totais dos testes foram: 
+467,19 segundos para o Nginx contra 2.824,64 segundos para o Apache.
 
 % %GRAFICO 2
 \subsection{Média do Total de Dados Transferido}
+O total de dados transferidos mostra a quantidade de informações que foram 
+trocadas entre os computadores, incluindo os dados enviados pelas requisições e 
+os dados retornados pelo servidor.\\
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\linewidth]{graficos/grafico2-f1} 
@@ -64,6 +81,10 @@ Todos os gráficos foram gerados usando a ferramenta de geração de gráfico do
 	\caption{Média do Total de Dados Transferido}
 	\label{fig:grafico2}
 \end{figure}
+
+Os dados e os gráficos mostram que na média, os testes no servidor do Nginx 
+transferiram 4,3 vezes mais dados do que nos testes no Apache.
+
 
 % %GRAFICO 3
 \subsection{Média do Total de Texto HTML Transferido}
