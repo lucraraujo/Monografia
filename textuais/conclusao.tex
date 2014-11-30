@@ -3,15 +3,15 @@ Com base nos dados coletados nos teste com os dois servidores, é possível dize
 que o servidor HTTP Nginx conseguiu ser, em média, 5 vezes mais eficiente do 
 que o servidor HTTP Apache, dando uma margem de sobrevida ao SIGA como ele é 
 desenvolvido hoje, usando o \textit{framework} Miolo. Porém, mesmo com a 
-utilização de um servidor HTTP mais eficiente, é difícil dizer até quando o  
+utilização de um servidor HTTP mais eficiente, é difícil dizer até quando o 
 SIGA aguentará a crescente demanda de novos usuários.\\
 Como dito na introdução, escalabilidade é um atributo desejável de um sistema. 
 Ao meu ver, o \textit{framework} Miolo não oferece um nível de escalabilidade 
-suficientemente bom, sendo necessária a compra de novos servidores com 
+suficientemente bom, sendo necessário investimento em novos servidores com 
 desempenho superior ao que é utilizado atualmente, para que o sistema suporte 
 uma grande demanda. O Miolo, ao ``esconder'' o HTML do desenvolvedor com a 
-intenção de agilizar o desenvolvimento, acaba por exigir uma carga de 
-processamento exagerada, devido aos seus mecanismos de geração de páginas 
+intenção de facilitar e agilizar o desenvolvimento, acaba por exigir uma alta 
+carga de processamento devido aos seus mecanismos de geração de páginas 
 dinâmicas.\\
 Além da substituição do servidor HTTP para o Nginx, o ideal seria a total 
 substituição do SIGA, sendo desenvolvido do zero, podendo utilizar a mesma 
@@ -53,5 +53,5 @@ A utilização da \textit{Hip-Hop Virtual Machine} - HHVM (www.hhvm.com), máqui
 virtual desenvolvida pelo Facebook para ser utilizada nos servidores da empresa 
 e de código aberto, possibilita mais uma oportunidade de melhoria no desempenho 
 de sistemas desenvolvidos em PHP, pois a ferramenta provê uma compilação em 
-tempo real (\textit{just-in-time}) preservando a dinamismo do desenvolvimento 
+tempo real (\textit{just-in-time}), preservando a dinamismo do desenvolvimento 
 em PHP.
