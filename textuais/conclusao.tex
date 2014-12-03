@@ -1,17 +1,17 @@
 \chapter{Conclusão}\label{cap:conclusao}
-Com base nos dados coletados nos teste com os dois servidores, é possível dizer 
-que o servidor HTTP Nginx conseguiu ser, em média, 5 vezes mais eficiente do 
-que o servidor HTTP Apache, dando uma margem de sobrevida ao SIGA como ele é 
+Com base nos dados coletados e analisádos, é possível dizer que o servidor HTTP 
+Nginx conseguiu ser, em média, 5 vezes mais eficiente que o servidor HTTP 
+Apache, dando uma margem de sobrevida ao SIGA da forma como o sistema é 
 desenvolvido hoje, usando o \textit{framework} Miolo. Porém, mesmo com a 
 utilização de um servidor HTTP mais eficiente, é difícil dizer até quando o 
-SIGA aguentará a crescente demanda de novos usuários.\\
+SIGA conseguirá escalar em relação a quantidade de usuários ativos.\\
 Como dito na introdução, escalabilidade é um atributo desejável de um sistema. 
 Ao meu ver, o \textit{framework} Miolo não oferece um nível de escalabilidade 
 suficientemente bom, sendo necessário investimento em novos servidores com 
 desempenho superior ao que é utilizado atualmente, para que o sistema suporte 
-uma grande demanda. O Miolo, ao ``esconder'' o HTML do desenvolvedor com a 
-intenção de facilitar e agilizar o desenvolvimento, acaba por exigir uma alta 
-carga de processamento devido aos seus mecanismos de geração de páginas 
+uma grande demanda. O Miolo, ao ``esconder'' o código HTML do desenvolvedor com 
+a intenção de facilitar e agilizar o desenvolvimento, acaba exigindo uma alta 
+carga de processamento devido ao seu mecanismo de geração de páginas 
 dinâmicas.\\
 Além da substituição do servidor HTTP para o Nginx, o ideal seria a total 
 substituição do SIGA, sendo desenvolvido do zero, podendo utilizar a mesma 
@@ -33,21 +33,20 @@ contam com uma grande comunidade de desenvolvedores.
 \section{Trabalhos futuros}
 A troca do servidor HTTP, do Apache para o Nginx, não é a única coisa que pode 
 ser feita para que o SIGA não tenha o seu ciclo de vida encerrado em um futuro 
-próximo.\\
-A atualização dos \textit{softwares} utilizados pelo SIGA traria não somente 
-uma melhoria no desempenho, como também mais segurança. A versão do PHP 
-utilizada no servidor do SIGA a 5.3.3, lançada em Junho de 2.009, 5 anos atrás, 
-e a mais atual é a 5.6, lançada em Outubro de 2.014. A versão do 
-\textit{framework} Miolo utilizado no SIGA é a 2.0, sendo a versão mais atual a 
-2.6.\\
+próximo. A atualização dos \textit{softwares} utilizados pelo SIGA traria não 
+somente melhoria no desempenho, como também mais segurança. A versão do PHP 
+utilizada no servidor do SIGA a 5.3.3, lançada em Junho de 2.009, sendo versão 
+estável atual 5.6, lançada em Outubro de 2.014. A versão do 
+\textit{framework} Miolo utilizado no SIGA é a 2.0, sendo a versão estável 
+atual 2.6.\\
 A ferramenta de relatórios utilizada representa outro gargalo importante no 
-desempenho do SIGA. O Jaspereport foi desenvolvida originalmente para ser 
-utilizada com a linguagem Java, sendo que, para cada relatório gerado, uma 
-máquina virtual Java é criada para cada relatório gerado, consumindo muitos 
-recursos do servidor e diminuindo o desempenho geral do sistema. Uma 
+desempenho do SIGA. O Jaspereport foi desenvolvido originalmente para ser 
+utilizado com a linguagem Java, sendo que, para cada relatório gerado, uma 
+máquina virtual Java é criada para cada relatório gerado, consumindo os 
+recursos do servidor e degradando o desempenho geral do sistema. Uma 
 alternativa para esse problema seria a adoção da biblioteca PHPJasperXML 
 (www.simitgroup.com/?q=PHPJasperXML), que gera relatórios usando o próprio 
-interpretador do PHP a partir da leitura dos arquivos XML gerados e utilizados 
+interpretador do PHP a partir da leitura dos arquivos XML utilizados 
 pelo Jaspereport na criação de relatórios.\\
 A utilização da \textit{Hip-Hop Virtual Machine} - HHVM (www.hhvm.com), máquina 
 virtual desenvolvida pelo Facebook para ser utilizada nos servidores da empresa 
