@@ -1,147 +1,278 @@
-%% abtex2-modelo-slides.tex, v-1.0 gfabinhomat
-%% Copyright 2012-2014 by abnTeX2 group at http://abntex2.googlecode.com/ 
-%%
-%% This work may be distributed and/or modified under the
-%% conditions of the LaTeX Project Public License, either version 1.3
-%% of this license or (at your option) any later version.
-%% The latest version of this license is in
-%%   http://www.latex-project.org/lppl.txt
-%% and version 1.3 or later is part of all distributions of LaTeX
-%% version 2005/12/01 or later.
-%%
-%% This work has the LPPL maintenance status `maintained'.
-%% 
-%% The Current Maintainer of this work is Fábio Rodrigues Silva, 
-%% member of abnTeX2 team, led by Lauro César Araujo. 
-%% Further information are available on 
-%% http://abntex2.googlecode.com/
-%%
-%% This work consists of the files abntex2-modelo-slides.tex, 
-%% abntex2-modelo-references.bib and abntex2-modelo-marca.pdf
-%%
-%% Modelo desenvolvido por Fábio Rodrigues Silva (gfabinhomat@gmail.com)
-%% Mais informações podem ser obtidas no guia do usuário Beamer 
-%% 
-%%(http://linorg.usp.br/CTAN/macros/latex/contrib/beamer/doc/beameruserguide.pdf)
-%% Informações rápidas podem ser acessadas em 
-%%http://en.wikibooks.org/wiki/LaTeX/Presentations
-
-
-% Apresentações em widescreen. Outros valores possíveis: 1610, 149, 54, 43 e 32.
-% Por padrão, as apresentações são no formato 4:3 (sem o aspectratio).
 \documentclass[aspectratio=43]{beamer}
 
-\usetheme{Pittsburgh}
+\usetheme{PaloAlto}
 \usecolortheme{default}
-\usefonttheme[onlymath]{serif}			% para fontes matemáticas
-% Enconte mais temas e cores em http://www.hartwork.org/beamer-theme-matrix/ 
-% Veja também http://deic.uab.es/~iblanes/beamer_gallery/index.html
+\usefonttheme[onlymath]{serif}
 
-% Customizações de Cores: fg significa cor do texto e bg é cor do fundo
-\setbeamercolor{normal text}{fg=black}
-\setbeamercolor{alerted text}{fg=red}
-\setbeamercolor{author}{fg=blue}
-\setbeamercolor{institute}{fg=blue}
-\setbeamercolor{date}{fg=green}
-\setbeamercolor{frametitle}{fg=red}
-\setbeamercolor{framesubtitle}{fg=brown}
-\setbeamercolor{block title}{bg=blue, fg=white}		%Cor do título
-\setbeamercolor{block body}{bg=gray, fg=darkgray}	%Cor do texto (bg= fundo; 
-%fg=texto)
+\usepackage[alf]{abntex2cite}
+\usepackage[brazil]{babel}
+\usepackage{color}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{txfonts}
+\usepackage{comment}
 
-% ---
-% PACOTES
-% ---
-\usepackage[alf]{abntex2cite}		% Citações padrão ABNT
-\usepackage[brazil]{babel}		% Idioma do documento
-\usepackage{color}			% Controle das cores
-\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
-\usepackage{graphicx}			% Inclusão de gráficos
-\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão 
-%automática dos acentos)
-\usepackage{txfonts}			% Fontes virtuais
-% ---
 
-% --- Informações do documento ---
 \title{Proposta de melhoria de desempenho do SIGA utilizando Nginx como 
 servidor HTTP}
 \author{Lucas Rafael Araujo Andrade}
 \institute{
-	Universidade Federal dos Vales do Jequitinhonha e Mucuri - UFVJM
-	\par
-	Faculdade de Ciências Exatas e Tecnológicas - FACET
-	\par
-	Departamento de Computação - DECOM
-	\par
-	Bacharelado em Sistemas de Informação}
-\date{\today}
-% ---
+Orientador: Alexandre Ramos Fonseca \\
+Universidade Federal dos Vales do Jequitinhonha e Mucuri - UFVJM
+\par
+Faculdade de Ciências Exatas e Tecnológicas - FACET
+\par
+Departamento de Computação - DECOM
+\par
+Bacharelado em Sistemas de Informação}
+\date{15 de Dezembro de 2014}
+
 
 % ----------------- INÍCIO DO DOCUMENTO --------------------------------------
 \begin{document}
 
-% ----------------- NOVO SLIDE --------------------------------
+% ----------------- CAPA --------------------------------
 \begin{frame}
-
-\begin{minipage}{1\linewidth}
-  \centering
-  \begin{tabular}{cc}
-    \begin{tabular}{c}
-      \includegraphics[width=3.0cm]{abntex2-modelo-img-marca.pdf}
-    \end{tabular}
-    &
-    \begin{tabular}{c}
-      \textbf{Universidade do Brasil} \\ \textbf{Faculdade de Arquitetura da 
-      Informação}
-    \end{tabular}
-  \end{tabular}
-\end{minipage}
 
 \titlepage
 
 \end{frame}
-
-% ----------------- NOVO SLIDE --------------------------------
+% ----------------- SUMÁRIO --------------------------------
 \begin{frame}{Sumário}
 \tableofcontents
 \end{frame}
 
-% ----------------- NOVO SLIDE --------------------------------
-\section{Introdução}
-
+% ----------------- INTRODUÇÃO --------------------------------
+\section{Introdução}\label{sec:introducao}
+% ----------------- SLIDE 1 --------------------------------
 \begin{frame}{Introdução}
-
-Sinta-se convidado a participar do projeto abnTeX! Acesse o site do projeto em
-\url{http://abntex2.googlecode.com/}. Também fique livre para conhecer,
-estudar, alterar e redistribuir o trabalho do ABNTEX, desde que os arquivos
-modificados tenham seus nomes alterados e que os créditos sejam dados aos
-autores originais, nos termos da ``The LATEX Project Public
-License''\ \url{http://www.latex-project.org/lppl.txt} \cite[p. 
-31]{abntex2modelo}.
-
+	\begin{block}{}
+		\begin{itemize}
+			\item Avanço dos computadores e redes de comunicação;
+			\item Computadores pessoais ---> Servidores \textit{web};
+			\item Acessíveis no mundo tudo;
+			\item Servidores HTTP.
+		\end{itemize}
+	\end{block} \pause
+	\begin{block}{}
+		\begin{itemize}
+			\item Conteúdo dinâmico;
+			\item Ambientes chegando ao limite;
+			\item Fragilidades expostas;
+			\item Falta desempenho.
+		\end{itemize}
+	\end{block}
+\end{frame}
+% ----------------- SLIDE 2 --------------------------------
+\begin{frame}{Escalabilidade}
+	\begin{block}{}
+	``Escalabilidade é um atributo desejável de 
+	uma rede, sistema ou processo.'' (BONDI, 2000).
+		\begin{itemize}
+			\item Acomodar uma quantidade sempre maior de elementos ou objetos;
+			\item Processar quantidade crescente de trabalho;
+			\item Suscetível a ampliação.
+			\item Deseja-se que um sistema seja escalável.
+		\end{itemize}
+	\end{block}
+\end{frame}
+% ----------------- SLIDE 3 --------------------------------
+\begin{frame}{Escalabilidade}
+	\begin{block}{}
+	Quando se diz que um sistema não é escalável ou que não escala:
+		\begin{itemize}
+			\item Custo adicional é excessivo; \pause
+			\item Tempo de resposta; \pause
+			\item Processamento (processador); \pause
+			\item Espaço; \pause
+			\item Memória; \pause
+			\item Dinheiro.
+		\end{itemize}
+	\end{block}
+\end{frame}
+% ----------------- SLIDE 4 --------------------------------
+\begin{frame}{Escalabilidade}
+	\begin{block}{}
+		\begin{itemize}
+			\item É crucial para o sucesso à longo prazo de um sistema; \pause
+			\item Pode ser comprometida por ações repetidas de forma frequente; 
+			\pause
+			\item Algoritmos que levem a \textit{deadlock}; \pause
+			\item Escalonamento de recursos ruim.
+		\end{itemize}
+	\end{block}
+\end{frame}
+% ----------------- SLIDE 5 --------------------------------
+\begin{frame}
+	\begin{block}{SIGA - UFVJM}
+		\begin{itemize}
+			\item Adquirido em 2007 da UFJF; \pause
+			\item PHP e Miolo; \pause
+			\item Apache HTTP \textit{Server}.
+		\end{itemize}
+	\end{block} \pause
+	\begin{block}{Apache}
+		\begin{itemize}
+			\item Desenvolvido desde 1.995;
+			\item Mais utilizado desde então;
+			\item Aproximadamente 37\% dos sítios no mundo.
+		\end{itemize}
+	\end{block}
+\end{frame}
+% ----------------- SLIDE 6 --------------------------------
+\begin{frame}{Utilização dos Servidores \textit{Web}}
+	\begin{figure}
+		\centering
+		\caption{Utilização de Servidores \textit{web} no mundo}
+		\includegraphics[width=1\linewidth]{../figuras/grafico1}\\
+		Fonte: Netcraft
+	\end{figure}
+\end{frame}
+% ----------------- SLIDE 7 --------------------------------
+\begin{frame}{Utilização dos Servidores \textit{Web}}
+\begin{figure}
+	\centering
+	\caption{Utilização de Servidores \textit{web} entre os 1.000.000 de sítios 
+	}
+	mais acessados no mundo.
+	\includegraphics[width=1\linewidth]{../figuras/grafico2} \\
+	Fonte: Netcraft
+\end{figure}
+\end{frame}
+% ----------------- SLIDE 8 --------------------------------
+\begin{frame}{Utilização dos Servidores \textit{Web}}
+	\begin{itemize}
+		\item Queda na utilização do Apache; \pause
+		\item Aumento da utilização do Nginx; \pause
+		\item Tecnologia em ascensão não significar ser melhor; \pause
+		\item Investigar é necessário.
+	\end{itemize}
 \end{frame}
 
+\subsection{Motivação}
+
+% ----------------- SLIDE 9 --------------------------------
+\begin{frame}{Motivação}
+	\begin{itemize}
+		\item Aumento do número de usuários; \pause
+		\item Lentidão eventual do sistema; \pause
+		\item 3.500 novos alunos.
+	\end{itemize}
+\end{frame}
+% ----------------- SLIDE 10 --------------------------------
+\begin{frame}{Motivação}
+	\framesubtitle{Pessoas ligadas à UFVJM}
+	\centering
+	\begin{table}
+		\caption{Pessoas ligadas à UFVJM}
+		\begin{tabular}{|c|c|}
+			\hline
+			Alunos & 8.121 \\ \hline
+			Professores & 576 \\ \hline
+			Servidores Técnico-Administrativo & 421 \\ \hline
+			\textbf{Total} & 9.118 \\ \hline
+		\end{tabular}
+	\end{table}
+		Fonte: UFVJM Em Números
+\end{frame}
+% ----------------- SLIDE 11 --------------------------------
+\begin{frame}{Motivação}
+\framesubtitle{Dez dias com mais acesso ao SIGA}
+	\centering
+	\begin{table}
+		\caption{Dez dias com mais acesso no SIGA}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			\textbf{Dia} & \textbf{Acessos}  & \textbf{Ocasião} \\ \hline
+			16/08/2014 & 20.942 & Início da Pré Matrícula \\ \hline
+			25/08/2014 & 17.536 & Início do Período Letivo \\ \hline
+			16/04/2013 & 17.091 & Dias Finais do Período Letivo \\ \hline
+			30/09/2013 & 17.007 & Início da Pré Matrícula \\ \hline
+			17/04/2013 & 16.772 & Dias Finais do Período Letivo \\ \hline
+			15/04/2013 & 16.597 & Dias Finais do Período Letivo \\ \hline
+			31/07/2014 & 16.035 & Dias Finais do Período Letivo \\ \hline
+			29/07/2014 & 15.744 & Dias Finais do Período Letivo \\ \hline
+			28/07/2014 & 15.477 & Dias Finais do Período Letivo \\ \hline
+			30/07/2014 & 14.854 & Dias Finais do Período Letivo \\ \hline
+		\end{tabular}
+	\end{table}
+	Fonte: Base de Dados do SIGA
+\end{frame}
+
+\subsection{Objetivos}
+% ----------------- SLIDE 12 --------------------------------
+\begin{frame}{Objetivos}
+	\begin{block}{Objetivo Geral}
+		Identificar se a utilização do servidor HTTP Nginx é mais eficiente do 
+		que o utilizado atualmente, o Apache HTTP \textit{Server}.
+	\end{block} \pause
+	\begin{block}{Objetivos Específicos}
+		Analisar os dados coletados a partir de testes realizados para 
+		identificar se o Nginx é mais eficiente do que o Apache; apresentar a 
+		solução encontrada e analisar o que pode ser feito para evitar a 
+		substituição ou reconstrução do SIGA.
+	\end{block}
+\end{frame}
+
+\subsection{Organização do Trabalho}
+% ----------------- SLIDE 13 --------------------------------
+
+\begin{frame}{Organização do Trabalho}
+	\begin{block}{Capítulos}
+		\begin{enumerate}
+			\item Introdução;
+			\item Fundamentação Teórica;
+			\item Tecnologias Utilizadas;
+			\item Metodologia;
+			\item Análise dos Dados;
+			\item Conclusão.
+		\end{enumerate}
+	\end{block}
+\end{frame}
+
+% ----------------- FUNDAMENTAÇÃO TEÓRICA --------------------------------
+
+%\input{2-sec-fundamentacao-teorica}
+
+% ----------------- TECNOLOGIAS UTILIZADAS --------------------------------
+
+%\input{3-sec-tecnologias-utilizadas}
+
+% ----------------- METODOLOGIA --------------------------------
+
+%\input{4-sec-metodologia}
+
+% ----------------- ANÁLISE DOS DADOS --------------------------------
+
+%\input{5-sec-analise-dos-dados}
+
+% ----------------- CONCLUSÃO --------------------------------
+
+%\input{6-sec-conclusao}
+
 % ----------------- NOVO SLIDE --------------------------------
+\begin{comment}
 \section{Fontes a serem consultadas}
 \begin{frame}
 \frametitle{Público-Alvo}
 \framesubtitle{Usuários já iniciados ao Beamer}
 
 \begin{block}{Título}
- Este modelo foi preparado como uma aplicação do uso do pacote abnTeX2 com o 
- Beamer.
+Este modelo foi preparado como uma aplicação do uso do pacote abnTeX2 com o 
+Beamer.
 \end{block}
 
 \begin{itemize}
- \item Alguns comandos são explicados no modelo TEX. \pause
- 
- \item Para maiores informações, consulte o guia do usuário Beamer 
- (\url{http://www.tex.ac.uk/tex-archive/macros/latex/contrib/beamer/doc/beameruserguide.pdf})\pause
- 
- \item Para alterar o tema e as cores, consulte 
- \url{http://deic.uab.es/~iblanes/beamer_gallery/index.html}
- 
- \item Consulte também \url{http://www.hartwork.org/beamer-theme-matrix/}
+\item Alguns comandos são explicados no modelo TEX. \pause
+
+\item Para maiores informações, consulte o guia do usuário Beamer 
+(\url{http://www.tex.ac.uk/tex-archive/macros/latex/contrib/beamer/doc/beameruserguide.pdf})\pause
+
+\item Para alterar o tema e as cores, consulte 
+\url{http://deic.uab.es/~iblanes/beamer_gallery/index.html}
+
+\item Consulte também \url{http://www.hartwork.org/beamer-theme-matrix/}
 \end{itemize}
 
 \end{frame}
@@ -155,11 +286,11 @@ Use-a como um guia de orientações gerais.
 
 Outras fontes a serem consideradas:
 \begin{enumerate}
- \item \url{http://www.latex-project.org/}
- \item \url{http://www.tex-br.org/}
- \item \url{http://latexbr.blogspot.com.br/}
- \item \url{http://tex.stackexchange.com/}
- \item \url{http://www.tug.org/}
+\item \url{http://www.latex-project.org/}
+\item \url{http://www.tex-br.org/}
+\item \url{http://latexbr.blogspot.com.br/}
+\item \url{http://tex.stackexchange.com/}
+\item \url{http://www.tug.org/}
 \end{enumerate}
 
 \end{frame}
@@ -179,13 +310,13 @@ Outras fontes a serem consideradas:
 \begin{frame}{Participe dos grupos de discussão}
 
 \begin{itemize}
-  \item Tire dúvidas e ajude outros por meio do grupo de usuários LaTeX
-  \url{https://groups.google.com/group/latex-br} (e-mail:
-  \url{latex-br@googlegroups.com})
-  
-  \item Proponha melhorias, avise sobre falhas e faça sugestões sobre o abnTeX2
-  no grupo dos desenvolvedores \url{https://groups.google.com/group/abntex2}
-  (e-mail: \url{abntex2@googlegroups.com});
+\item Tire dúvidas e ajude outros por meio do grupo de usuários LaTeX
+\url{https://groups.google.com/group/latex-br} (e-mail:
+\url{latex-br@googlegroups.com})
+
+\item Proponha melhorias, avise sobre falhas e faça sugestões sobre o abnTeX2
+no grupo dos desenvolvedores \url{https://groups.google.com/group/abntex2}
+(e-mail: \url{abntex2@googlegroups.com});
 \end{itemize}
 
 Participe também da comunidade abnTeX2 no Google Plus
@@ -202,21 +333,21 @@ Participe também da comunidade abnTeX2 no Google Plus
 
 Para adequar seus documentos acadêmicos com as normas ABNT, utilize:
 \begin{enumerate}
- \item \citeonline{NBR14724:2011}: Esta Norma especifica os princípios gerais
- para a elaboração de trabalhos acadêmicos (teses, dissertações e outros),
- visando sua apresentação à instituição (banca, comissão examinadora de
- professores, especialistas designados e/ou outros).
- 
- \item \citeonline{NBR6028:2003}: Esta Norma estabelece os requisitos para
- redação e apresentação de resumos.
- 
- \item \citeonline{NBR6024:2012}: Esta Norma especifica os princípios gerais
- para de um sistema de numeração progressiva das seções de um documento, de
- modo a expor numa seqüência lógica o inter-relacionamento da matéria e a
- permitir sua localização.
- 
- \item \citeonline{NBR10520:2002}: Esta Norma especifica as características
- exigíveis para a apresentação de citações em documentos.
+\item \citeonline{NBR14724:2011}: Esta Norma especifica os princípios gerais
+para a elaboração de trabalhos acadêmicos (teses, dissertações e outros),
+visando sua apresentação à instituição (banca, comissão examinadora de
+professores, especialistas designados e/ou outros).
+
+\item \citeonline{NBR6028:2003}: Esta Norma estabelece os requisitos para
+redação e apresentação de resumos.
+
+\item \citeonline{NBR6024:2012}: Esta Norma especifica os princípios gerais
+para de um sistema de numeração progressiva das seções de um documento, de
+modo a expor numa seqüência lógica o inter-relacionamento da matéria e a
+permitir sua localização.
+
+\item \citeonline{NBR10520:2002}: Esta Norma especifica as características
+exigíveis para a apresentação de citações em documentos.
 \end{enumerate}
 
 \end{frame}
@@ -254,6 +385,6 @@ Para orientações sobre as citações e as referências com o abnTeX2, consulte
 \begin{frame}[allowframebreaks]{Referências}
 \bibliography{abntex2-modelo-references}
 \end{frame}
-
+\end{comment}
 % ----------------- FIM DO DOCUMENTO -----------------------------------------
 \end{document}
