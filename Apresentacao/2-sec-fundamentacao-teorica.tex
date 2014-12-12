@@ -1,36 +1,101 @@
 \section{Fundamentação Teórica}\label{sec:fundamentacao-teorica}
+
+\subsection{Aplicação Cliente/Servidor}
+
 % ----------------- SLIDE 14 --------------------------------
-
-\subsection{Aplicação Cliente-Servidor}
-
-\begin{frame}{Cliente}
-	
+\begin{frame}{Cliente/Servidor}
+	\begin{block}{Cliente}
+		``Um solicitante de informações em rede, normalmente um computador ou 
+		estação de trabalho, que pode consultar o banco de dados e/ou outras 
+		informações de um servidor.'' (STALLINGS, 2005)
+	\end{block}
+	\begin{block}{Servidor}
+		``Um computador, normalmente uma estação de trabalho poderosa ou um 
+		\textit{mainframe} que abriga informações para manipulação por clientes 
+		em rede.'' (STALLINGS, 2005)
+	\end{block}
+\end{frame}
+% ----------------- SLIDE 15 --------------------------------
+\begin{frame}{Aplicações Cliente/Servidor}
+	\begin{itemize}
+		\item Conjuntos de programas no cliente e servidor; \pause
+		\item Solicitações partem do cliente; \pause
+		\item Servidor provê o recurso; \pause
+		\item Geralmente utilizam o protocolo HTTP; \pause
+		\item Muito utilizados na construção de sistemas informação.
+	\end{itemize}
 \end{frame}
 
-%\subsection{Protocolo de Comunicação}
+\subsection{Protocolo de Comunicação}
+% ----------------- SLIDE 16 --------------------------------
 
-%\begin{frame}
-	
-%	blablabla
-%\end{frame}
+\begin{frame}{Protocolo}
+	\begin{block}{Definição de Protocolo}
+		\begin{enumerate}
+			\item Ata, nota ou registro dos documentos governamentais, dos 
+			atos oficiais, da correspondência de um governo ou tribunal, de uma 
+			empresa, universidade etc.
+			\item Subdivisão de uma repartição pública (ou empresa privada) em 
+			que se registram e/ou se recebem os requerimentos, documentos ou 
+			processos.
+			\item Recibo que registra o número e a data em que um processo ou 
+			requerimento foi catalogado e registrado.
+			\item Acordo regulamentado entre países ou empresas: protocolo 
+			internacional.
+		\end{enumerate}
+	\end{block}
+\end{frame}
 
-%\subsection{Modelo TCP/IP}
 
-%\begin{frame}
+\begin{frame}{Protocolo de Comunicação}
+\begin{itemize}
+\item Convenção; \pause
+\item Controla e possibilita conexão, comunicação e transferência; \pause
+\item Sintaxe: Inclui elementos como formato de dados e níveis de sinal; \pause
+\item Semântica: Inclui informações de controle para coordenação e 
+tratamento de erro; \pause
+\item Temporização: Inclui combinação de velocidade e sequência. \pause
+\end{itemize}
+\end{frame}
 
-%	blablabla
-%\end{frame}
+\subsection{Modelo TCP/IP}
 
-%\subsection{\textit{World Wide Web}}
+% ----------------- SLIDE 18 --------------------------------
+\begin{frame}{TCP/IP}
+	\begin{block}{}
+		\begin{itemize}
+			\item Não é um modelo; \pause
+			\item Conjunto de protocolos; \pause
+			\item Organizados em camadas; \pause
+			\item Cinco camadas.
+		\end{itemize}
+	\end{block}
+\end{frame}
+% ----------------- SLIDE 19 --------------------------------
+\begin{frame}
+	\begin{block}{Camadas TCP/IP}
+			\centering
+			\begin{table}
+				\begin{tabular}{|c|}
+					\hline
+					Aplicação \\ \hline
+					Transporte \\ \hline
+					Rede \\ \hline
+					Enlace\\ \hline
+					Física\\ \hline
+				\end{tabular}
+			\end{table}
+	\end{block}
+\end{frame}
 
-%\begin{frame}
-	
-%	blablabla
-%\end{frame}
+\subsection{Protocolo HTTP}
 
-%\subsection{\textit{Protocolo HTTP}}
-
-%\begin{frame}
-	
-%	blablabla
-%\end{frame}
+% ----------------- SLIDE 20 --------------------------------
+\begin{frame}{HTTP}
+	\begin{itemize}
+		\item Protocolo básico da WWW; \pause
+		\item Camada de aplicação;
+		\item Pode ser usada em qualquer aplicação cliente/servidor.
+		\item Transferir texto, hipertexto, áudio, imagem, etc.
+	\end{itemize}
+\end{frame}
