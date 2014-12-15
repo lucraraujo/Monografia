@@ -1,13 +1,24 @@
+\section*{}
+\begin{frame}
+	\centering
+	{\Huge Metodologia}
+\end{frame}
+
 \section{Metodologia}\label{sec:metodologia}
+
+\subsection*{Coleta dos Dados}
 
 \begin{frame}{Coleta dos Dados}
 	\begin{itemize}
 		\item Ferramenta ApacheBench;
-		\item ``ab -n X -c Y'';
+		\item ``ab -n X -c Y Z'';
 		\item X = Requisições Totais;
-		\item Y = Requisições Simultâneas.
+		\item Y = Requisições Simultâneas;
+		\item Z = URL do Servidor.
 	\end{itemize}
 \end{frame}
+
+\subsection*{Ambiente de Testes}
 
 \begin{frame}{Ambiente de Testes}
 	\begin{block}{Máquinas Virtuais}
@@ -18,8 +29,11 @@
 			\item 30GB de HD;
 			\item 1 Núcleo.
 		\end{itemize}
-	\end{block} \pause
-	\begin{block}{Hospedeiro}
+	\end{block}
+
+\end{frame}
+\begin{frame}{Ambiente de Testes}
+	\begin{block}{Computador Hospedeiro}
 		\begin{itemize}
 			\item Computador Portátil;
 			\item Intel Core i5-3337U @ 1,8Ghz - 4 Núcleos;
@@ -29,7 +43,9 @@
 	\end{block}
 \end{frame}
 
-\begin{frame}{Definição Dos Valores Utilizados nos Testes}
+\subsection*{Valores Utilizados nos Testes}
+
+\begin{frame}{Valores Utilizados nos Testes}
 	\begin{block}{Valores}
 		\begin{itemize}
 			\item Requisições Totais variando de 1.000 à 15.000 com salto de 
@@ -39,31 +55,29 @@
 	\end{block}
 \end{frame}
 
-\begin{frame}{Definição Dos Valores Utilizados nos Testes}
+\begin{frame}{Valores Utilizados nos Testes}
 	\begin{figure}
 		\centering
 		\caption{Requisições Totais e Requisições Concorrentes}
-		\includegraphics[width=0.7\linewidth]{tabela-requisicoes} \\
+		\includegraphics[width=0.7\textwidth, 
+		height=0.7\textheight]{tabela-requisicoes} \\
 	\end{figure}
 \end{frame}
 
+\subsection*{Métricas Utilizadas}
+
 \begin{frame}{Métricas Utilizadas}
-As métricas utilizadas para comparar o desempenho dos servidores HTTP são as 
-mesmas métricas calculadas e entregues pelo ApacheBench.
-\begin{block}{Métricas}
-\begin{itemize}
-	\item Tempo total do teste em segundos (s);
-	\item Total de dados transferido em bytes (b);
-	\item Total de texto em HTML transferido em bytes (b);
-	\item Tempo médio por requisição em milissegundos (ms);
-	\item Tempo médio de resposta por requisição entre as requisições 
-	concorrentes em milissegundos (ms);
-	\item Taxa de transferência em Quilo Bytes por segundo (Kb/s).
-\end{itemize}
-\end{block}
+	As métricas utilizadas para comparar o desempenho dos servidores HTTP são 
+	as mesmas calculadas e entregues pelo ApacheBench.
+	\begin{block}{Métricas}
+		\begin{itemize}
+			\item Tempo total do teste em segundos (s);
+			\item Total de dados transferido em bytes (b);
+			\item Total de texto em HTML transferido em bytes (b);
+			\item Tempo médio por requisição em milissegundos (ms);
+			\item Tempo médio de resposta por requisição entre as requisições 
+			concorrentes em milissegundos (ms);
+			\item Taxa de transferência em Quilo Bytes por segundo (Kb/s).
+		\end{itemize}
+	\end{block}
 \end{frame}
-
-
-
-
-
