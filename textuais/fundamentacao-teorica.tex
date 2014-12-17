@@ -1,24 +1,43 @@
 \chapter{Fundamentação Teórica}\label{cap:fundamentacao-teorica}
+
 Este capítulo se destina a apresentar alguns conceitos teóricos para o 
 entendimento da proposta desse estudo.
+
 \section{Aplicação cliente/servidor}
+
 Para entender o que é uma aplicação cliente/servidor, é preciso primeiramente 
 definir o que é cliente e servidor.
+
 \subsection{Cliente}
 Cliente é:
+
 \begin{citacao}
 Um solicitante de informações em rede, normalmente um computador ou estação de 
 trabalho, que pode consultar o banco de dados e/ou outras informações de um 
 servidor. \cite{stallings2005}
 \end{citacao}
-Ainda de acordo com \citeonline{stallings2005}, o cliente é um computador ou estação de trabalho, que apresenta ao usuário final uma interface gráfica de alto nível e amigável, incluindo o uso de janelas e \textit{mouse}. 
+
+Ainda de acordo com \citeonline{stallings2005}, o cliente é um computador ou 
+estação de trabalho, que apresenta ao usuário final uma interface gráfica de 
+alto nível e amigável, incluindo o uso de janelas e \textit{mouse}. 
+
 \subsection{Servidor}
+
 Servidor é:
+
 \begin{citacao}
-Um computador, normalmente uma estação de trabalho poderosa ou um \textit{mainframe} que abriga informações para manipulação por clientes em rede. \cite{stallings2005}
+	
+Um computador, normalmente uma estação de trabalho poderosa ou um 
+\textit{mainframe} que abriga informações para manipulação por clientes em 
+rede. \cite{stallings2005}
+
 \end{citacao}
-Ainda de acordo com \citeonline{stallings2005}, cada servidor no ambiente cliente/servidor fornece um conjunto de serviços compartilhados.
+
+Ainda de acordo com \citeonline{stallings2005}, cada servidor no ambiente 
+cliente/servidor fornece um conjunto de serviços compartilhados.
+
 \subsection{Aplicações cliente/servidor}
+
 As aplicações cliente/servidor são um conjunto de programas que funcionam no 
 computador cliente, ou seja, aquele que esta solicitando um recurso pela rede, 
 e no computador servidor, aquele que provê o recurso solicitado. As 
@@ -26,14 +45,23 @@ solicitações de recursos ou informações partem do programa instalado no
 computador do usuário (cliente), trafegam por uma rede de computadores, 
 geralmente utilizando o protocolo de comunicação HTTP até o servidor 
 responsável por prover o recurso ou informação solicitado pelo programa do 
-cliente.\\
-As aplicações cliente/servidor são muito utilizadas na construção de sistemas de informação, onde os dados armazenados pelos servidores precisam estar disponíveis para os usuários do sistema. É também o principal modelo utilizado em sistemas de informação baseados na \textit{web}, onde o cliente acessa o sistema através de um navegador \textit{web}.
+cliente.
+
+As aplicações cliente/servidor são muito utilizadas na construção de sistemas 
+de informação, onde os dados armazenados pelos servidores precisam estar 
+disponíveis para os usuários do sistema. É também o principal modelo utilizado 
+em sistemas de informação baseados na \textit{web}, onde o cliente acessa o 
+sistema através de um navegador \textit{web}.
+
 \section{Protocolo de comunicação}
+
 De acordo com o Dicionário Online de Português, um dos significados de 
 protocolo é:
+
 \begin{citacao}
 Acordo regulamentado entre países ou empresas. \cite{dicionario}
 \end{citacao}
+
 Aplicando esse conceito na computação, protocolo pode ser entendido como uma 
 convenção que controla e possibilita uma conexão, comunicação e transferência 
 de dados entre dois sistemas computacionais. De maneira simples, protocolos 
@@ -46,19 +74,29 @@ comum. O quê e como é comunicado, deve estar de acordo com as convenções
 combinadas entre as entidades envolvidas. Essas convenções são denominadas 
 protocolos, que são conjuntos de regras para controlar a troca de 
 dados entre entidades. Os principais elementos de um protocolo são:
+
 \begin{itemize}
 	\item Sintaxe: Inclui elementos como formato de dados e níveis de sinal;
 	\item Semântica: Inclui informações de controle para coordenação e 
 	tratamento de erro;
 	\item Temporização: Inclui combinação de velocidade e sequência.
 \end{itemize}
+
 \section{Modelo TCP/IP}
-O TCP/IP (\textit{Transmission Control Protocol/Internet Protocol}), é um conjunto de protocolos, resultante de pesquisas e desenvolvimentos realizados pela ARPANET (\textit{Advanced Research Project Agency Network}) e financiada pela DARPA (\textit{Defense Advanced Research Projects Agency}), agência de pesquisa militar do governo dos Estados Unidos, e que hoje são utilizados como padrões de comunicação na Internet.\\
+
+O TCP/IP (\textit{Transmission Control Protocol/Internet Protocol}), é um 
+conjunto de protocolos, resultante de pesquisas e desenvolvimentos realizados 
+pela ARPANET (\textit{Advanced Research Project Agency Network}) e financiada 
+pela DARPA (\textit{Defense Advanced Research Projects Agency}), agência de 
+pesquisa militar do governo dos Estados Unidos, e que hoje são utilizados como 
+padrões de comunicação na Internet.
+
 Ao contrário do modelo OSI(Open Systems Interconnections), o TCP/IP não pode 
 ser considerado um modelo e sim um conjunto de protocolos. Esse protocolos, 
 assim como no modelo OSI, podem ser organizados em camadas relativamente 
 independentes, com a diferença de que no modelo OSI existem sete camadas e no 
 TPC/IP existem cinco. As camadas do TCP/IP são:
+
 \begin{itemize}
 	\item Camada de aplicação
 	\item Camada de transporte
@@ -66,7 +104,9 @@ TPC/IP existem cinco. As camadas do TCP/IP são:
 	\item Camada de enlace
 	\item Camada física
 \end{itemize}
+
 Para efeito de comparação, as camadas do modelo OSI são:
+
 \begin{itemize}
 	\item Camada de aplicação
 	\item Camada de apresentação
@@ -76,14 +116,17 @@ Para efeito de comparação, as camadas do modelo OSI são:
 	\item Camada de enlace
 	\item Camada física
 \end{itemize}
+
 %aplicação
 \subsection{Camada de aplicação}
+
 A camada de aplicação é a camada que a maioria dos programas usa de 
 forma a se comunicar através de uma rede com outros programas. Processos que 
 funcionam nessa camada são específicos da aplicação; o dado é passado do 
 programa de rede, no formato usado internamente por essa aplicação, e é 
 codificado dentro do padrão de um protocolo. Existem diversos protocolos nesta 
 camada. Os mais comuns são:
+
 \begin{itemize}
 	\item SMTP (\textit{Simple Mail Transport Protocol}): é utilizado para a 
 	comunicação entre serviços de correio eletrônico na Internet.
@@ -96,26 +139,32 @@ camada. Os mais comuns são:
 	publicação de sites \textit{web} na Internet.
 	\item FTP (\textit{File Transfer Protocol}): utilizado para publicação e 
 	transferência de arquivos via Internet.
+
 \end{itemize}
+
 %host a host
 \subsection{Camada de transporte}
+
 A camada de transporte (ou \textit{host} a \textit{host}) é responsável pela 
 transferência eficiente, confiável e econômica dos dados entre o computador de 
 origem e de destino, independente do tipo, topologia ou configuração das redes 
 físicas existentes entre elas, garantindo ainda que os dados cheguem sem erros 
-e na sequência correta.\\
+e na sequência correta.
+
 A camada de transporte é uma camada fim-a-fim, isto é, uma entidade desta 
 camada só se comunica com a sua entidade semelhante do destinatário. A camada 
 de transporte provê mecanismos que possibilitam a troca de dados fim-a-fim, não 
 possibilitando, assim, a comunicação com entidades intermediárias. A camada 
 possui dois protocolos: o UDP (\textit{User Datagram Protocol}) e o TCP 
-(\textit{Transmission Control Protocol}).\\
+(\textit{Transmission Control Protocol}).
+
 O protocolo UDP realiza apenas a multiplexação para que várias aplicações 
-possam acessar o sistema de comunicação de forma coerente.\\
-O protocolo TCP realiza, além da multiplexação, uma série de funções para 
+possam acessar o sistema de comunicação de forma coerente. O protocolo TCP 
+realiza, além da multiplexação, uma série de funções para 
 tornar a comunicação entre origem e destino mais confiável. São 
 responsabilidades do protocolo TCP: o controle de fluxo e erro, a 
-sequenciação e multiplexação de mensagens.\\
+sequenciação e multiplexação de mensagens.
+
 %inter-rede
 \subsection{Camada de rede}
 A camada de rede (ou inter-rede) é responsável por controlar a operação da rede 
@@ -123,21 +172,25 @@ de um modo geral. Suas principais funções são o roteamento dos pacotes entre
 fonte e destino, mesmo que estes tenham que passar por diversos nós 
 intermediários durante o percurso, o controle de congestionamento e a 
 contabilização do número de pacotes ou bytes utilizados pelo usuário, para fins 
-de tarifação.\\
+de tarifação.
+
 O principal aspecto que deve ser observado nessa camada é a execução do 
 roteamento dos pacotes entre fonte e destino, principalmente quando existem 
 caminhos diferentes para conectar entre si dois nós da rede. Em redes de longa 
 distância é comum que a mensagem chegue do nó fonte ao nó destino passando por 
 diversos nós intermediários no meio do caminho e é tarefa dos protocolos da 
-camada de rede escolher o melhor caminho para essa mensagem.\\
+camada de rede escolher o melhor caminho para essa mensagem.
+
 A escolha da melhor rota pode ser baseada em tabelas estáticas, que são 
 configuradas na criação da rede e raramente são modificadas; ser 
 determinada no início de cada conversação, ou ser altamente dinâmica, sendo 
 determinada a cada novo pacote, a fim de refletir exatamente a carga da rede 
 naquele instante. Se muitos pacotes estão sendo transmitidos através dos mesmos 
 caminhos, eles vão diminuir o desempenho global da rede, formando gargalos.\\
+
 %acesso à rede
 \subsection{Camada de enlace}
+
 A camada de enlace (ou de acesso à rede) trata da troca de dados entre um 
 sistema final e a rede à qual está conectada \cite{stallings2005}. Para que 
 haja uma comunicação, o computador de origem da mensagem deve informar para a 
@@ -146,19 +199,23 @@ possa entregar a mensagem para o destinatário correto. O computador de origem
 pode requerer alguns serviços especiais, como por exemplo, prioridade no envio 
 da mensagem. O software utilizado nessa camada irá depender do tipo de rede a 
 ser usado, sendo que diferentes padrões foram desenvolvidos para comutação de 
-circuitos de pacotes.\\
+circuitos de pacotes.
+
 Quando dois computadores estão conectado a redes diferentes, faz-se necessário 
 o uso de procedimentos para que os dados trafeguem entre as redes. Nesses 
 casos, se utiliza o protocolo IP (\textit{Internet Protocol}). Esse protocolo 
 oferece a função de interconectar várias redes através de roteadores. 
 Roteadores são computadores especializados em conectar duas ou mais redes 
 diferentes, e o protocolo IP é também utilizado e implementado nos roteadores.
+
 \subsection{Camada física}
+
 A camada física (interface de rede) é a primeira camada do modelo TCP/IP. 
 Também chamada de camada de abstração de hardware, tem como função principal 
 fazer a interface do modelo TCP/IP com os diversos tipos de redes (X.25, ATM, 
 FDDI, Ethernet, \textit{Token Ring}, \textit{Frame Relay}, sistema de conexão 
-ponto-a-ponto SLIP, etc.) e transmitir os datagramas pelo meio físico.\\
+ponto-a-ponto SLIP, etc.) e transmitir os datagramas pelo meio físico.
+
 Esta camada lida com os meios de comunicação, corresponde ao nível de hardware, 
 ou meio físico, que trata dos sinais eletrônicos, conector, pinagem, níveis de 
 tensão, dimensões físicas, características mecânicas e elétricas etc. Os 
@@ -167,17 +224,21 @@ contém um endereço de origem, os dados propriamente ditos e um endereço de
 destino. É responsável pelo endereçamento e tradução de nomes e endereços 
 lógicos em endereços físicos. Ela determina a rota que os dados seguirão do 
 computador de origem até o de destino. Tal rota dependerá das condições da 
-rede, prioridade do serviço dentre outros fatores.\\
+rede, prioridade do serviço dentre outros fatores.
+
 Também gerencia o tráfego e taxas de velocidade nos canais de comunicação. 
 Outra função que pode exercer é o agrupamento de pequenos pacotes em um único 
 pacote para transmitir pela rede (ou a subdivisão de pacotes grandes). No 
-destino os dados são recompostos no seu formato original.\\
+destino os dados são recompostos no seu formato original.
+
 \section{\textit{World Wide Web}}
+
 A \textit{World Wide Web} (WWW, ou \textit{Web}), foi proposta em 1.989 pelo 
 cientista britânico Sir Tim Berners-Lee quando trabalhava no CERN (Laboratório 
 Europeu para Partículas Físicas). A ideia de Berners-Lee era propor uma 
 tecnologia de hipermídia distribuída com o objetivo de prover o 
-compartilhamento internacional de descobertas científicas usando a Internet.\\
+compartilhamento internacional de descobertas científicas usando a Internet.
+
 A \textit{web} é um sistema distribuído que consiste em uma coleção de 
 arquivos armazenados em servidores e que podem ser acessados a partir de 
 programas instalados nos computadores dos clientes, os chamados navegadores. 
@@ -185,19 +246,27 @@ Cada arquivo tem um endereço em forma de URL. Os usuário podem navegar de um
 arquivo para outro (ou entre páginas) fazendo uso do \textit{mouse} do 
 computador para clicar em um \textit{link} que irá direcionar o usuário para a 
 página requisitada. Por ser uma tecnologia que está presente na camada de 
-aplicação, o protocolo utilizado é o HTTP\\
+aplicação, o protocolo utilizado é o HTTP
+
 \section{Protocolo HTTP}
+
 De acordo com \citeonline{stallings2005}, o \textit{Hypertext Transfer 
 Protocol} (Protocolo de Transferência de Hipertexto, em tradução livre) é o 
 protocolo básico da \textit{World Wide Web} e pode ser usado em qualquer 
 aplicação cliente/servidor que envolve hipertexto e está presente na camada de 
-aplicação do modelo TCP/IP.\\
-O HTTP não serve somente para transferir hipertexto. É um protocolo para transferir informações com uma eficiência necessária. Os dados transferidos podem ser texto puro, hipertexto, áudio, imagens ou qualquer outro dado disponível na Internet.\\
+aplicação do modelo TCP/IP.
+
+O HTTP não serve somente para transferir hipertexto. É um protocolo para 
+transferir informações com uma eficiência necessária. Os dados transferidos 
+podem ser texto puro, hipertexto, áudio, imagens ou qualquer outro dado 
+disponível na Internet.
+
 O HTTP é um protocolo cliente/servidor orientado à transações. O seu uso 
 mais típico é acontece entre um navegador \textit{web} e um servidor 
 \textit{web}, sempre utilizando o protocolo TCP, presente na camada de 
-transporte, afim de manter a confiabilidade.\\
+transporte, afim de manter a confiabilidade.
+
 Cada transação utiliza uma nova conexão TCP entre cliente e servidor, sendo 
 tratada de forma independente. Após o término de cada transação, a conexão 
 entre cliente e servidor é fechada. Por ser um protocolo sem estado, é o 
-adequado para a maior parte das aplicações.\\
+adequado para a maior parte das aplicações.
