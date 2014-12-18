@@ -6,22 +6,39 @@ coletados é que será possível determinar se os objetivos foram alcançados.
 
 \section{Coleta dos dados}
 
-Para realizar a coleta de dados dos servidores foi utilizada o 
+Para realizar a coleta de dados dos servidores foi utilizado o 
 \textit{software} ApacheBench. O ApacheBench é uma ferramenta destinada a 
 realizar testes de carga em servidores \textit{web} geralmente utilizada em 
 linha de comando sendo invocada com o comando ``ab'' no terminal, aceitando 
 como parâmetros, entre outros, a quantidade total de requisições que serão 
 feitas, quantas requisições serão feitas de forma simultânea e a URL da página 
-que será requisitada. O comando de uma forma genérica fica assim:
+que será requisitada. O comando de uma forma genérica é dado por:
 
 \begin{verbatim}
-ab -n numero_de_requisições -c requisições_simultâneas endereço_do_servidor
+ab -n X -c Y Z
 \end{verbatim}
+Onde:
+
+	\begin{itemize}
+		\item X = Requisições Totais;
+		\item Y = Requisições Simultâneas;
+		\item Z = URL do Servidor.
+	\end{itemize}
 
 O parâmetro ``-n'' indica a quantidade total de requisições serão feitas no 
 teste e o parâmetro, ``-c'' indica a quantidade de requisições serão feitas de 
 forma simultânea. Ao fim da execução do teste, o ApacheBench retorna os os 
-dados coletados e calculados.
+dados coletados e calculados. Os dados são:
+
+\begin{itemize}
+	\item Tempo total do teste em segundos (s);
+	\item Total de dados transferido em bytes (b);
+	\item Total de texto em HTML transferido em bytes (b);
+	\item Tempo médio por requisição em milissegundos (ms);
+	\item Tempo médio de resposta por requisição entre as requisições 
+	concorrentes em milissegundos (ms);
+	\item Taxa de transferência em Quilo Bytes por segundo (Kb/s);
+\end{itemize}
 
 \input{textuais/ambiente-de-testes}
 
@@ -35,6 +52,7 @@ ativos atualmente projetando mais que o dobro de usuário no futuro (15.000) e
 com cargas de acesso simultâneo de 10\%, 20\%, 40\% e 80\% para cada quantidade 
 total de utilizadores. Os valores utilizados nos testes estão descritos na 
 tabela \ref{tab:requisicoes}.
+
 \begin{table}[htb]
 	\centering
 	\ABNTEXfontereduzida
@@ -66,8 +84,9 @@ tabela \ref{tab:requisicoes}.
 	\legend{Quantidade de Requisições Totais e Requisições Concorrentes}
 \end{table}
 
-Para cada valor de requisições totais, foram testados quatro cenários de acesso 
-simultâneo: 10, 20, 40, e 80 porcento, totalizando 60 testes. Os dados obtidos 
+Para cada valor de requisições totais, foram testados quatro cenários de 
+acessos 
+simultâneos: 10, 20, 40, e 80 porcento, totalizando 60 testes. Os dados obtidos 
 nos testes foram tabelados em uma planilha eletrônica com a ajuda do 
 LibreOffice Calc e analisados a partir de gráficos e dos dados brutos.
 
